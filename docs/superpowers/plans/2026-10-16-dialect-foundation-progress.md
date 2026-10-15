@@ -16,3 +16,7 @@
 - CI now runs race detector and vet in addition to existing full tests and lint.
 
 - Ruling: preserve the exported Diagnostic struct shape as well as CML compatibility. An unkeyed-literal regression reproduced RED with in-place fields; metadata moved to RuleDiagnostic and ValidateDetailed. Legacy JSON stays unchanged. Both validation APIs are cross-checked across the corpus, independently pinned by the pre-change baseline.
+
+- Task 4 complete: independent reviewer rechecked the import-precedence fix and legacy Diagnostic API preservation; no remaining material findings.
+- Verified in the original repository on codex/dialect-foundation: uncached full suite, race suite, vet, configured golangci-lint (0 issues), gofmt and diff whitespace checks all PASS. Main remains at 351c92b1f81081a98381ab76faec7412d987c37e.
+- Completion audit: no grammar/dialect/CLI changes; 328-file frozen baseline, 273 existing conformance cases and 55 corpus cases unchanged; document graph and legacy composition tests pass; detailed/legacy diagnostic values agree; compatibility/evolution documentation and CI gates delivered.

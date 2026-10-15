@@ -51,6 +51,6 @@ Interfaces: RuleCode, RuleCategory, Rule; LookupRule(code RuleCode) (Rule, bool)
 
 Files: docs/architecture/evolution.md, docs/compatibility.md, README.md, README.ru.md; CI verification command if needed.
 - [x] Document ownership, API contracts, compatibility boundary, staged future DSL versioning and remaining work.
-- [ ] Run go test ./... -count=1, go test -race ./..., go vet ./..., golangci-lint run and gofmt check.
-- [ ] Review the diff independently; repair material findings and repeat relevant verification.
-- [ ] Transfer verified commits to the original repository on the requested separate branch, reverify there and leave a clean checkout.
+- [x] Run go test ./... -count=1, go test -race ./..., go vet ./..., golangci-lint run and gofmt check.
+- [x] Review the diff independently; repair material findings and repeat relevant verification.
+- [x] Transfer verified commits to the original repository on the requested separate branch, reverify there and leave a clean checkout.
