@@ -14,12 +14,27 @@ var primitiveTypes = map[string]bool{
 	"float": true, "Float": true, "Blob": true, "Clob": true, "Key": true,
 }
 
-// Validate checks semantic rules of the Context Mapper language.
+// Validate checks semantic rules using the unchanged legacy diagnostic shape.
 func (m *Model) Validate() []Diagnostic {
+	detailed := m.ValidateDetailed()
+	if detailed == nil {
+		return nil
+	}
+	diagnostics := make([]Diagnostic, len(detailed))
+	for i, finding := range detailed {
+		diagnostics[i] = finding.Diagnostic
+	}
+	return diagnostics
+}
+
+// ValidateDetailed performs the same checks, in the same order and with the
+// same severities, adding stable rule identities and descriptive categories.
+// It does not apply policy overrides or change reference resolution.
+func (m *Model) ValidateDetailed() []RuleDiagnostic {
 	if m == nil {
 		return nil
 	}
-	var ds []Diagnostic
+	var ds []RuleDiagnostic
 	add := func(code RuleCode, pos Position, args ...any) {
 		ds = append(ds, makeDiagnostic(code, pos, args...))
 	}

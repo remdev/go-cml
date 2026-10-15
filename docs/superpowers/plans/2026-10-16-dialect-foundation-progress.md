@@ -14,3 +14,5 @@
 
 - Independent review found one P2 compatibility issue: loading all documents before legacy composition changed first-error precedence for a nested map conflict followed by missing sibling. Regression reproduced RED; legacy per-document composition restored while LoadWorkspace stays graph-only. No other actionable findings; reviewer checked all 61 emissions against prior templates/severities/arguments.
 - CI now runs race detector and vet in addition to existing full tests and lint.
+
+- Ruling: preserve the exported Diagnostic struct shape as well as CML compatibility. An unkeyed-literal regression reproduced RED with in-place fields; metadata moved to RuleDiagnostic and ValidateDetailed. Legacy JSON stays unchanged. Both validation APIs are cross-checked across the corpus, independently pinned by the pre-change baseline.

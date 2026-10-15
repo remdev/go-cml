@@ -42,7 +42,7 @@ Interfaces: LoadWorkspace(path string) (*Workspace, error), (*Workspace).Flatten
 ## Task 3: Identify validation rules
 
 Files: cml/diagnostic.go, cml/rules.go, cml/rules_test.go; modify cml/validate.go.
-Interfaces: RuleCode, RuleCategory, Rule; LookupRule(code RuleCode) (Rule, bool), Rules() []Rule; Diagnostic gains Code and Category. Existing Diagnostic.String stays unchanged.
+Interfaces: RuleCode, RuleCategory, Rule; LookupRule(code RuleCode) (Rule, bool), Rules() []Rule; ValidateDetailed() []RuleDiagnostic adds Code and Category without changing Diagnostic. Existing Diagnostic.String stays unchanged.
 - [x] Write tests for known resolution/semantic/structural/advisory findings, catalog isolation and corpus-wide metadata consistency; observe missing API failure.
 - [x] Assign explicit stable codes to existing checks and move message templates/default severities to a private typed catalog. Separate diagnostic support from validation traversal.
 - [x] Run focused tests, unchanged baseline and full suite.

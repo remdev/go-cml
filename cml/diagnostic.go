@@ -27,11 +27,17 @@ func (s Severity) String() string {
 
 // Diagnostic is one semantic finding.
 type Diagnostic struct {
-	Code     RuleCode
-	Category RuleCategory
 	Severity Severity
 	Pos      Position
 	Message  string
+}
+
+// RuleDiagnostic adds machine-readable rule metadata without changing the
+// legacy Diagnostic value or its serialization. ValidateDetailed returns it.
+type RuleDiagnostic struct {
+	Diagnostic
+	Code     RuleCode
+	Category RuleCategory
 }
 
 func (d Diagnostic) String() string {
@@ -53,12 +59,14 @@ func HasErrors(ds []Diagnostic) bool {
 
 // makeDiagnostic uses the rule's fixed compatibility default. It does not apply
 // project policies or permit validation checks to override their own severity.
-func makeDiagnostic(code RuleCode, pos Position, args ...any) Diagnostic {
+func makeDiagnostic(code RuleCode, pos Position, args ...any) RuleDiagnostic {
 	definition, ok := ruleDefinitions[code]
 	if !ok {
 		panic(fmt.Sprintf("unregistered CML validation rule %q", code))
 	}
-	return Diagnostic{Code: code, Category: definition.Category,
-		Severity: definition.DefaultSeverity, Pos: pos,
-		Message: fmt.Sprintf(definition.format, args...)}
+	return RuleDiagnostic{
+		Diagnostic: Diagnostic{Severity: definition.DefaultSeverity, Pos: pos,
+			Message: fmt.Sprintf(definition.format, args...)},
+		Code: code, Category: definition.Category,
+	}
 }

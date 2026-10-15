@@ -60,20 +60,20 @@ for independent editing. ParseFile still returns the flattened view.
 
 ## Diagnostic API
 
-Diagnostic now also carries Code and Category. Rules() returns a code-sorted,
-caller-independent catalog; LookupRule returns metadata by stable code. Codes
-are machine identities and must not be reassigned to unrelated checks.
-Categories: structure, resolution, semantics, advice. DefaultSeverity is the
-unchanged compatibility default; category does not control whether a finding
-blocks validation. Diagnostic.String and CLI rendering omit the new metadata
-and preserve their old text. Syntax/load errors remain errors, not catalog rules.
+Diagnostic and Model.Validate keep their original Go shape and behavior,
+including unkeyed literals and default JSON serialization. Model.ValidateDetailed
+returns RuleDiagnostic values embedding the original Diagnostic plus Code and
+Category. Both methods perform the same checks and use the same default severity
+and ordering; only the detailed result adds metadata.
 
-This is additive for keyed Go struct literals and ordinary field access, but
-adding exported Diagnostic fields breaks external unkeyed struct literals and
-changes default JSON serialization. This Go API caveat is distinct from CML
-source compatibility; no stable diagnostic JSON wire format existed or is
-introduced here. New integrations should use keyed literals and explicit wire
-DTOs. Rule metadata does not yet provide configurable validation profiles.
+Rules() returns a code-sorted, caller-independent catalog; LookupRule returns
+metadata by stable code. Codes are machine identities and must not be reassigned
+to unrelated checks. Categories: structure, resolution, semantics, advice.
+DefaultSeverity is the unchanged compatibility default; category does not control
+whether a finding blocks validation. Diagnostic.String and CLI rendering retain
+their old text. Syntax/load errors remain errors, not catalog rules. Rule metadata
+does not yet provide configurable validation profiles. There is no new diagnostic
+JSON CLI or promised detailed-result wire schema.
 
 ## Verification
 

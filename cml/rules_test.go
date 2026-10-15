@@ -1,6 +1,7 @@
 package cml
 
 import (
+	"encoding/json"
 	"io/fs"
 	"os"
 	"path/filepath"
@@ -26,7 +27,7 @@ func TestDiagnosticRuleIdentity(t *testing.T) {
 			if err != nil {
 				t.Fatal(err)
 			}
-			for _, d := range m.Validate() {
+			for _, d := range m.ValidateDetailed() {
 				if d.Code != tc.code {
 					continue
 				}
@@ -93,7 +94,15 @@ func TestCorpusDiagnosticMetadata(t *testing.T) {
 			if err != nil {
 				return nil
 			} // Syntax-invalid conformance cases have no semantic diagnostics.
-			for _, d := range m.Validate() {
+			legacy := m.Validate()
+			detailed := m.ValidateDetailed()
+			if len(legacy) != len(detailed) {
+				t.Fatalf("%s: diagnostic count changed", path)
+			}
+			for i, d := range detailed {
+				if d.Diagnostic != legacy[i] {
+					t.Errorf("%s: legacy and detailed results differ", path)
+				}
 				count++
 				rule, ok := LookupRule(d.Code)
 				if !ok || rule.Category != d.Category || rule.DefaultSeverity != d.Severity {
@@ -115,12 +124,29 @@ func TestCorpusDiagnosticMetadata(t *testing.T) {
 }
 
 func TestDiagnosticStringPreservesLegacyRendering(t *testing.T) {
-	d := Diagnostic{Code: RuleUnknownBoundedContext, Category: CategoryResolution, Severity: SevError, Pos: Position{File: "model.cml", Line: 2, Col: 3}, Message: "unknown context"}
+	d := RuleDiagnostic{Code: RuleUnknownBoundedContext, Category: CategoryResolution, Diagnostic: Diagnostic{Severity: SevError, Pos: Position{File: "model.cml", Line: 2, Col: 3}, Message: "unknown context"}}
 	if got := d.String(); got != "model.cml:2:3: error: unknown context" {
 		t.Fatal(got)
 	}
 	d.Pos = Position{}
 	if got := d.String(); got != "error: unknown context" {
 		t.Fatal(got)
+	}
+}
+
+// Existing callers may use unkeyed literals or serialize Diagnostic directly.
+// Preparatory metadata must not change that established Go API shape.
+func TestLegacyDiagnosticShape(t *testing.T) {
+	d := Diagnostic{SevWarning, Position{}, "legacy"}
+	if d.String() != "warning: legacy" {
+		t.Fatal(d)
+	}
+	data, err := json.Marshal(d)
+	if err != nil {
+		t.Fatal(err)
+	}
+	want := `{"Severity":1,"Pos":{"File":"","Line":0,"Col":0},"Message":"legacy"}`
+	if string(data) != want {
+		t.Fatalf("legacy JSON: %s", data)
 	}
 }

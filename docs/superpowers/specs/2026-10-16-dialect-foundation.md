@@ -11,10 +11,9 @@ The user authorized planning and implementation, on a separate branch.
 
 Context Mapper DSL 6.12 remains the reference for the existing CML surface.
 Preserve Parse, ParseFile, Model.Validate, Model.String, generator/refactor entry
-points and existing CLI output/exit behavior. Diagnostic metadata is additive;
-legacy text, severity, source positions and ordering remain unchanged. Adding
-fields to an exported Go struct can break external unkeyed literals; document
-that Go API caveat separately from language compatibility.
+points and existing CLI output/exit behavior. Diagnostic metadata is exposed by a separate ValidateDetailed API;
+legacy text, severity, source positions and ordering remain unchanged. The exported Diagnostic shape, unkeyed literals and default JSON serialization
+remain unchanged.
 
 Preserve current import composition, including repeated declarations through
 diamond imports and the single ContextMap restriction. Do not silently fix or
