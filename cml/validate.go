@@ -78,6 +78,7 @@ func (m *Model) Validate() []Diagnostic {
 	m.checkAggregates(add)
 	m.checkRequirements(add)
 	m.checkFlows(add)
+	m.checkOperationStates(add)
 	m.checkReferences(add)
 	return ds
 }
@@ -508,8 +509,34 @@ func (m *Model) checkFlows(add adder) {
 				if count == 0 {
 					add(SevError, step.Pos, "The operation '%s' is not part of the Service '%s' of the Bounded Context '%s' Application.", step.Operation, step.Service, target.Name)
 				} else if count > 1 {
-					add(SevError, step.Pos, "The reference to operation '%s' is ambiguous, since there exist multiple operations with that name in Service '%s'. We suggest keeping the operation names distinct when referencing them through Coordinations.", step.Operation, step.Service)
+					add(SevWarning, step.Pos, "The reference to operation '%s' is ambiguous, since there exist multiple operations with that name in Service '%s'. We suggest keeping the operation names distinct when referencing them through Coordinations.", step.Operation, step.Service)
 				}
+			}
+		}
+	}
+}
+
+func (m *Model) checkOperationStates(add adder) {
+	for _, bc := range m.BoundedContexts {
+		for _, agg := range bc.AllAggregates() {
+			enum := lifecycleEnum(agg)
+			check := func(ops []*Operation) {
+				for _, op := range ops {
+					if op.Transition == nil {
+						continue
+					}
+					for _, value := range transitionValues(op.Transition) {
+						if enum == nil || !enum.hasValue(value) {
+							add(SevError, op.Pos, "'%s' is not a state of the Aggregate '%s'.", value, agg.Name)
+						}
+					}
+				}
+			}
+			for _, obj := range agg.Objects {
+				check(obj.Operations)
+			}
+			for _, svc := range agg.Services {
+				check(svc.Operations)
 			}
 		}
 	}
@@ -526,7 +553,13 @@ func (m *Model) checkReferences(add adder) {
 		if name == "" || primitiveTypes[name] {
 			return
 		}
-		matches := index[name]
+		var matches []*DomainObject
+		for _, obj := range index[name] {
+			if ref && crossesContextAndDomain(from, owners[obj]) {
+				continue
+			}
+			matches = append(matches, obj)
+		}
 		if len(matches) == 0 {
 			if ref {
 				add(SevError, pos, "Couldn't resolve reference to '%s'.", name)
@@ -547,6 +580,9 @@ func (m *Model) checkReferences(add adder) {
 	m.WalkObjects(func(bc *BoundedContext, _ *Aggregate, obj *DomainObject) {
 		for _, ref := range obj.References {
 			checkName(ref.Pos, ref.Type.RefName(), bc, true)
+		}
+		for _, assoc := range obj.Associations {
+			checkName(obj.Pos, assoc.Target, bc, true)
 		}
 		for _, attr := range obj.Attributes {
 			if name, ok := attr.Type.LinkedName(); ok {
@@ -755,6 +791,10 @@ func transitionValues(st *StateTransition) []string {
 		out = append(out, to.Value)
 	}
 	return out
+}
+
+func crossesContextAndDomain(from, target *BoundedContext) bool {
+	return (from != nil && target == nil) || (from == nil && target != nil)
 }
 
 func hasMod(mods []Modifier, name string) bool {
