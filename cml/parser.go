@@ -2,8 +2,6 @@ package cml
 
 import (
 	"fmt"
-	"os"
-	"path/filepath"
 	"slices"
 	"strings"
 )
@@ -60,55 +58,11 @@ func Parse(filename string, src []byte) (*Model, error) {
 
 // ParseFile parses a CML file and recursively loads its imports.
 func ParseFile(path string) (*Model, error) {
-	abs, err := filepath.Abs(path)
+	workspace, err := LoadWorkspace(path)
 	if err != nil {
 		return nil, err
 	}
-	return parseFile(abs, map[string]bool{})
-}
-
-func parseFile(abs string, stack map[string]bool) (*Model, error) {
-	if stack[abs] {
-		return nil, fmt.Errorf("%s: cyclic import", abs)
-	}
-	src, err := os.ReadFile(abs)
-	if err != nil {
-		return nil, err
-	}
-	model, err := Parse(abs, src)
-	if err != nil {
-		return nil, err
-	}
-	stack[abs] = true
-	var imported []*Model
-	for _, imp := range model.Imports {
-		next := imp.URI
-		if !filepath.IsAbs(next) {
-			next = filepath.Join(filepath.Dir(abs), next)
-		}
-		next = filepath.Clean(next)
-		child, err := parseFile(next, stack)
-		if err != nil {
-			return nil, err
-		}
-		imported = append(imported, child)
-	}
-	delete(stack, abs)
-	if len(imported) == 0 {
-		return model, nil
-	}
-	merged := &Model{File: abs, Comment: model.Comment}
-	for _, child := range imported {
-		if err := merged.absorb(child); err != nil {
-			return nil, err
-		}
-	}
-	if err := merged.absorb(model); err != nil {
-		return nil, err
-	}
-	merged.Imports = model.Imports
-	merged.File = abs
-	return merged, nil
+	return workspace.Flatten()
 }
 
 func (m *Model) absorb(other *Model) error {
