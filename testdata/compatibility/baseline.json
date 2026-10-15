@@ -1,0 +1,3117 @@
+[
+  {
+    "File": "conformance/AggregateDSLParsingTest-0.cml",
+    "PrintedSHA256": "f298e401f4ced4c65900771d150747a88a862cb6703d5eed88f1b338ad3c577b"
+  },
+  {
+    "File": "conformance/AggregateDSLParsingTest-1.cml",
+    "PrintedSHA256": "a66070894f4839a8d78f048577c9c30906263b61d38e241ed0f544b3838bddbd"
+  },
+  {
+    "File": "conformance/AggregateDSLParsingTest-10.cml",
+    "PrintedSHA256": "67a46858cdd3ebcd10228722cd419c2b630da81ddc831216cb4d115a0653f36d"
+  },
+  {
+    "File": "conformance/AggregateDSLParsingTest-11.cml",
+    "PrintedSHA256": "718911e95426bbb057115631a1ac03a0c6fee4816a791df66b0defc0053aa045"
+  },
+  {
+    "File": "conformance/AggregateDSLParsingTest-12.cml",
+    "PrintedSHA256": "e2dfa0d24ea68aaa2fa28cdaa411ff941ceb81ebdbbbdc151ac723064aeccf3e"
+  },
+  {
+    "File": "conformance/AggregateDSLParsingTest-13.cml",
+    "PrintedSHA256": "84eb51f1b17c7f79ddaee60582600836c5e27e7ce7a78c80ade6674aec0ca8f2"
+  },
+  {
+    "File": "conformance/AggregateDSLParsingTest-14.cml",
+    "PrintedSHA256": "558432611028da128a0675c88d44a4d174eb5ea33cc3fedcaa3d480c9c8fff61",
+    "Diagnostics": [
+      {
+        "Severity": 0,
+        "Pos": {
+          "File": "testdata/conformance/AggregateDSLParsingTest-14.cml",
+          "Line": 4,
+          "Col": 6
+        },
+        "Message": "Your aggregate 'myAggregate' contains multiple aggregate roots. An aggregate must only contain one root."
+      },
+      {
+        "Severity": 0,
+        "Pos": {
+          "File": "testdata/conformance/AggregateDSLParsingTest-14.cml",
+          "Line": 7,
+          "Col": 6
+        },
+        "Message": "Your aggregate 'myAggregate' contains multiple aggregate roots. An aggregate must only contain one root."
+      }
+    ]
+  },
+  {
+    "File": "conformance/AggregateDSLParsingTest-15.cml",
+    "PrintedSHA256": "f847e4255ac0c13185a207e5bfc093c2258043acd5e018786bbd263e6e816fba",
+    "Diagnostics": [
+      {
+        "Severity": 0,
+        "Pos": {
+          "File": "testdata/conformance/AggregateDSLParsingTest-15.cml",
+          "Line": 4,
+          "Col": 6
+        },
+        "Message": "Your aggregate 'myAggregate' contains multiple enums that define its states. Ensure that only one enum declares the states of the Aggregate."
+      },
+      {
+        "Severity": 0,
+        "Pos": {
+          "File": "testdata/conformance/AggregateDSLParsingTest-15.cml",
+          "Line": 8,
+          "Col": 6
+        },
+        "Message": "Your aggregate 'myAggregate' contains multiple enums that define its states. Ensure that only one enum declares the states of the Aggregate."
+      }
+    ]
+  },
+  {
+    "File": "conformance/AggregateDSLParsingTest-16.cml",
+    "PrintedSHA256": "614d39a18f5bd832b2acfef94a2bd8499d4cc6e778f5447781c9a16cf414459c"
+  },
+  {
+    "File": "conformance/AggregateDSLParsingTest-17.cml",
+    "PrintedSHA256": "eae813c89284170443eee7e38b44a7c7a31f0b8275f87041e87b394d2dba09ae"
+  },
+  {
+    "File": "conformance/AggregateDSLParsingTest-2.cml",
+    "PrintedSHA256": "5469273dd6fdb740a9383be263967930658339070fd34738773ba74a3f707e78"
+  },
+  {
+    "File": "conformance/AggregateDSLParsingTest-3.cml",
+    "PrintedSHA256": "841cfde59e721e75bc5e2f4015a8f97f6b07556d2e1c3afde0c49accc761c99d"
+  },
+  {
+    "File": "conformance/AggregateDSLParsingTest-4.cml",
+    "PrintedSHA256": "21c4c4047d17e832130511c468c3b55793f87a898794c1c5d364e45c2611321d"
+  },
+  {
+    "File": "conformance/AggregateDSLParsingTest-5.cml",
+    "PrintedSHA256": "e6d9073f8edbb0f3e911abb839f910d1d8683279bbd135ba439295fbdc538aa5",
+    "Diagnostics": [
+      {
+        "Severity": 0,
+        "Pos": {
+          "File": "testdata/conformance/AggregateDSLParsingTest-5.cml",
+          "Line": 3,
+          "Col": 5
+        },
+        "Message": "'teamA' is not a team. The owner attribute must refer to a Bounded Context representing a team (type = TEAM)!"
+      }
+    ]
+  },
+  {
+    "File": "conformance/AggregateDSLParsingTest-6.cml",
+    "PrintedSHA256": "e14bd3dd687ecb2d0b6860054fdafdd17c158682c3e196d40382cca267578d05"
+  },
+  {
+    "File": "conformance/AggregateDSLParsingTest-7.cml",
+    "PrintedSHA256": "ecd22fec269c3e752767aa6a707855177b8009a236df88778d787770a5943824"
+  },
+  {
+    "File": "conformance/AggregateDSLParsingTest-8.cml",
+    "PrintedSHA256": "b25396050d88ce713c342a28c91973d3cb2f69a9ef8941baa7a1dca692fb2eb2"
+  },
+  {
+    "File": "conformance/AggregateDSLParsingTest-9.cml",
+    "PrintedSHA256": "45e73c9d43f148e73d93a72a5489e3dc783ebf8775410371082bf972b96d5414"
+  },
+  {
+    "File": "conformance/ApplicationLayerDSLParsingTest-0.cml",
+    "PrintedSHA256": "a3e6730dfe781943ae4d1d16311536aaa856c7beb3a530696467d95a7f191ea8"
+  },
+  {
+    "File": "conformance/ApplicationLayerDSLParsingTest-1.cml",
+    "PrintedSHA256": "7ec64b7bb063529b161b5fad30d5ae8d6496f7d3d3ac8026664aa9038adf52f6"
+  },
+  {
+    "File": "conformance/ApplicationLayerDSLParsingTest-10.cml",
+    "PrintedSHA256": "247818a76344ffbd2267d3dbcfcf974ca94220ac35e1b71e894f2fcaf26f39dc"
+  },
+  {
+    "File": "conformance/ApplicationLayerDSLParsingTest-11.cml",
+    "PrintedSHA256": "48302c1ec9dbedd7d00bb9fd8cc072384d0da0eb34f6ac1535fb6454aee0ea04"
+  },
+  {
+    "File": "conformance/ApplicationLayerDSLParsingTest-12.cml",
+    "PrintedSHA256": "f0bb1fef19098df6792ba37fc3ce199d8139297de4bfd3a4a5bd51e3f13ab0e4"
+  },
+  {
+    "File": "conformance/ApplicationLayerDSLParsingTest-13.cml",
+    "PrintedSHA256": "3de66897a2250d709e2672bd95d6ac749c918ccd3c0da3bac0a95fb4bedf62a8"
+  },
+  {
+    "File": "conformance/ApplicationLayerDSLParsingTest-14.cml",
+    "PrintedSHA256": "65fa181784c90a51ccd99cd876bf37f80f776286a87705dbdaac2330e9c6952b"
+  },
+  {
+    "File": "conformance/ApplicationLayerDSLParsingTest-15.cml",
+    "PrintedSHA256": "5addaa4b1e6a76386cf468fdf8f3571052af691fd47adb79acb20c644d70b0bc"
+  },
+  {
+    "File": "conformance/ApplicationLayerDSLParsingTest-16.cml",
+    "PrintedSHA256": "2be76f1bff1fbd9bd53e02fc0cd104b05963be5faffd29cea1e21632ab819bce"
+  },
+  {
+    "File": "conformance/ApplicationLayerDSLParsingTest-17.cml",
+    "PrintedSHA256": "8c1ccf0b750f8cd87b909630857a5d77120b368a3839d338554104afe6e3d603"
+  },
+  {
+    "File": "conformance/ApplicationLayerDSLParsingTest-18.cml",
+    "PrintedSHA256": "b29c3552074418d7a6e118708f378a5271f9b2ac9cafe434fdbf201737199a69"
+  },
+  {
+    "File": "conformance/ApplicationLayerDSLParsingTest-19.cml",
+    "PrintedSHA256": "7aa702918bd8ac01d496dc2961faa06320833ce55ecbfcee523d3306097373c3"
+  },
+  {
+    "File": "conformance/ApplicationLayerDSLParsingTest-2.cml",
+    "PrintedSHA256": "1b1411e5021474f54fe66466ed849f83d12c97f5fbe9ae6386cd4fbcd6f2e946"
+  },
+  {
+    "File": "conformance/ApplicationLayerDSLParsingTest-20.cml",
+    "PrintedSHA256": "b8df1169a585c3d5ba8d3486523202903a9c0d639d5233da6ee69f766fe13744"
+  },
+  {
+    "File": "conformance/ApplicationLayerDSLParsingTest-21.cml",
+    "PrintedSHA256": "f075c6e9cacb6dddf5dbed112804fd13951a0f16c9b0a2e68c588189cdc35d88"
+  },
+  {
+    "File": "conformance/ApplicationLayerDSLParsingTest-22.cml",
+    "PrintedSHA256": "ecea1023a20aafb5a4f18a062450b62eaecc1b662160f8ca10bc9cf6695187d4"
+  },
+  {
+    "File": "conformance/ApplicationLayerDSLParsingTest-23.cml",
+    "PrintedSHA256": "fbb884b84f5f7b966c9c399a62e0f80bc2f2212c5be3dc68b3a3046fbeaa00b2"
+  },
+  {
+    "File": "conformance/ApplicationLayerDSLParsingTest-24.cml",
+    "PrintedSHA256": "37feb811e4c9848ead2ed8f0c10d78167f03ca2cb84e3833d653cc936e1d9f87"
+  },
+  {
+    "File": "conformance/ApplicationLayerDSLParsingTest-25.cml",
+    "PrintedSHA256": "eb9ec5420602b96d97dfa045562c60da1fa0af15bed3db0b429ac40438f931a2"
+  },
+  {
+    "File": "conformance/ApplicationLayerDSLParsingTest-26.cml",
+    "PrintedSHA256": "755b9563d7794596f87f25bdade9eea80d12ed19f43d8f31fc170df4b7b5b26d"
+  },
+  {
+    "File": "conformance/ApplicationLayerDSLParsingTest-27.cml",
+    "PrintedSHA256": "b628ad250ba24c68bffff61455bc32598803c9daf821cb2d795bab1ba0fc9f0f"
+  },
+  {
+    "File": "conformance/ApplicationLayerDSLParsingTest-28.cml",
+    "PrintedSHA256": "803e65cf18fbb7a8712c06786481b538947157f34c91628e19f331664a84a2ea"
+  },
+  {
+    "File": "conformance/ApplicationLayerDSLParsingTest-29.cml",
+    "PrintedSHA256": "109409c63220552df84b7aa08f7603984e273dd3ce1aade2049a40426eac4bdd"
+  },
+  {
+    "File": "conformance/ApplicationLayerDSLParsingTest-3.cml",
+    "PrintedSHA256": "ee7a2d83bfe99bfc20916ecb8909d4b64b08fa109489abcf5a22fc440f54eaac"
+  },
+  {
+    "File": "conformance/ApplicationLayerDSLParsingTest-30.cml",
+    "PrintedSHA256": "9522c7f498ea906f07701a5cd6bc66cc9c6c1f2062b435947d7e62d84b05d11b"
+  },
+  {
+    "File": "conformance/ApplicationLayerDSLParsingTest-31.cml",
+    "PrintedSHA256": "d551ee64ccc86fc0dd510aef9ab2dbd51913e7cd9a1ecfcc7fdfb316137d46ab"
+  },
+  {
+    "File": "conformance/ApplicationLayerDSLParsingTest-32.cml",
+    "PrintedSHA256": "41d45b1fc403aeb4eafd02656b206da3d17af3fcbbdd7d2e0940e32e2636aa57"
+  },
+  {
+    "File": "conformance/ApplicationLayerDSLParsingTest-4.cml",
+    "PrintedSHA256": "7ec64b7bb063529b161b5fad30d5ae8d6496f7d3d3ac8026664aa9038adf52f6"
+  },
+  {
+    "File": "conformance/ApplicationLayerDSLParsingTest-5.cml",
+    "PrintedSHA256": "0a77eaae9b567fcd1d4affced56d97e5e16a25e7a15a083b6fb7ec1abaed7448"
+  },
+  {
+    "File": "conformance/ApplicationLayerDSLParsingTest-6.cml",
+    "PrintedSHA256": "b0d0fe4df62a47f37bbe93f72c2e6a0caa036d100d6284b62d824b06c0e980ac"
+  },
+  {
+    "File": "conformance/ApplicationLayerDSLParsingTest-7.cml",
+    "PrintedSHA256": "18ab0db26bf56f264090ea92448b011a739d8f0da5b1268cf34816d06b0de27e",
+    "Diagnostics": [
+      {
+        "Severity": 0,
+        "Pos": {
+          "File": "testdata/conformance/ApplicationLayerDSLParsingTest-7.cml",
+          "Line": 4,
+          "Col": 6
+        },
+        "Message": "Multiple flows with the name 'TestFlow' have been declared. Please provide unique names!"
+      },
+      {
+        "Severity": 0,
+        "Pos": {
+          "File": "testdata/conformance/ApplicationLayerDSLParsingTest-7.cml",
+          "Line": 6,
+          "Col": 6
+        },
+        "Message": "Multiple flows with the name 'TestFlow' have been declared. Please provide unique names!"
+      }
+    ]
+  },
+  {
+    "File": "conformance/ApplicationLayerDSLParsingTest-8.cml",
+    "PrintedSHA256": "b0d0fe4df62a47f37bbe93f72c2e6a0caa036d100d6284b62d824b06c0e980ac"
+  },
+  {
+    "File": "conformance/ApplicationLayerDSLParsingTest-9.cml",
+    "PrintedSHA256": "063da50ff632ed3b013eee94af1f112a0bcd3c2635092d115e45db7c3044c077"
+  },
+  {
+    "File": "conformance/ApplicationLayerValidationTest-0.cml",
+    "PrintedSHA256": "690bd397ef887e391abf6584d8d692ce18ddde0805c273eaac99978dd2cf7769",
+    "Diagnostics": [
+      {
+        "Severity": 0,
+        "Pos": {
+          "File": "testdata/conformance/ApplicationLayerValidationTest-0.cml",
+          "Line": 5,
+          "Col": 7
+        },
+        "Message": "The command or operation 'CommandB' is not part of the 'ContextA' Bounded Context. Please ensure that your workflow only uses commands, operations and events that are part of the same Bounded Context."
+      }
+    ]
+  },
+  {
+    "File": "conformance/ApplicationLayerValidationTest-1.cml",
+    "PrintedSHA256": "3d0fe02e24bd79017081e9ac34fc89e1f2bbd6ab412ab3f2e033ecef9883e9ea",
+    "Diagnostics": [
+      {
+        "Severity": 0,
+        "Pos": {
+          "File": "testdata/conformance/ApplicationLayerValidationTest-1.cml",
+          "Line": 5,
+          "Col": 7
+        },
+        "Message": "The command or operation 'operationB' is not part of the 'ContextA' Bounded Context. Please ensure that your workflow only uses commands, operations and events that are part of the same Bounded Context."
+      }
+    ]
+  },
+  {
+    "File": "conformance/ApplicationLayerValidationTest-10.cml",
+    "PrintedSHA256": "6a4e6af5c77b00bf8e0ee0e2a5eacbd2ad239b58aa027fc28e02779b90509272",
+    "Diagnostics": [
+      {
+        "Severity": 0,
+        "Pos": {
+          "File": "testdata/conformance/ApplicationLayerValidationTest-10.cml",
+          "Line": 8,
+          "Col": 7
+        },
+        "Message": "The Service 'TestService' is not part of the Bounded Context 'TestContext' Application."
+      }
+    ]
+  },
+  {
+    "File": "conformance/ApplicationLayerValidationTest-11.cml",
+    "PrintedSHA256": "a3919f19d7a36d3d8891663b685cad6b99594349f6d1e5163b888c09e34a95bd",
+    "Diagnostics": [
+      {
+        "Severity": 0,
+        "Pos": {
+          "File": "testdata/conformance/ApplicationLayerValidationTest-11.cml",
+          "Line": 8,
+          "Col": 7
+        },
+        "Message": "The Service 'TestService' is not part of the Bounded Context 'TestContext' Application."
+      }
+    ]
+  },
+  {
+    "File": "conformance/ApplicationLayerValidationTest-12.cml",
+    "PrintedSHA256": "8d0e883f5f213044ba51a85eefe53e2d26ef8d8d07d12d2f1bd68eb41f5ebec1",
+    "Diagnostics": [
+      {
+        "Severity": 0,
+        "Pos": {
+          "File": "testdata/conformance/ApplicationLayerValidationTest-12.cml",
+          "Line": 9,
+          "Col": 7
+        },
+        "Message": "The Service 'TestService' is not part of the Bounded Context 'ContextA' Application."
+      }
+    ]
+  },
+  {
+    "File": "conformance/ApplicationLayerValidationTest-13.cml",
+    "PrintedSHA256": "23ee9fd97d93909cfc655af7bd7b4a255c4a4877aa44cb027c5ef24d2d4f9e56",
+    "Diagnostics": [
+      {
+        "Severity": 0,
+        "Pos": {
+          "File": "testdata/conformance/ApplicationLayerValidationTest-13.cml",
+          "Line": 8,
+          "Col": 7
+        },
+        "Message": "The operation 'operationB' is not part of the Service 'ServiceA' of the Bounded Context 'TestContext' Application."
+      }
+    ]
+  },
+  {
+    "File": "conformance/ApplicationLayerValidationTest-14.cml",
+    "PrintedSHA256": "c211e196d405be64c921fb9803a09ce41efc2bba52a3ca9aff5aa0b430676515",
+    "Diagnostics": [
+      {
+        "Severity": 1,
+        "Pos": {
+          "File": "testdata/conformance/ApplicationLayerValidationTest-14.cml",
+          "Line": 8,
+          "Col": 7
+        },
+        "Message": "The reference to operation 'testOperation' is ambiguous, since there exist multiple operations with that name in Service 'TestService'. We suggest keeping the operation names distinct when referencing them through Coordinations."
+      }
+    ]
+  },
+  {
+    "File": "conformance/ApplicationLayerValidationTest-15.cml",
+    "PrintedSHA256": "9522c7f498ea906f07701a5cd6bc66cc9c6c1f2062b435947d7e62d84b05d11b"
+  },
+  {
+    "File": "conformance/ApplicationLayerValidationTest-2.cml",
+    "PrintedSHA256": "b493d0157818be15dc803fdab97a0fb054c4637a674c49e3364e98deaef099d9",
+    "Diagnostics": [
+      {
+        "Severity": 0,
+        "Pos": {
+          "File": "testdata/conformance/ApplicationLayerValidationTest-2.cml",
+          "Line": 5,
+          "Col": 7
+        },
+        "Message": "The command or operation 'CommandB' is not part of the 'ContextA' Bounded Context. Please ensure that your workflow only uses commands, operations and events that are part of the same Bounded Context."
+      }
+    ]
+  },
+  {
+    "File": "conformance/ApplicationLayerValidationTest-3.cml",
+    "PrintedSHA256": "28cb30b1f3edac6c387c7cf3d527b5ef47891d4a78ad4eab77d28957101a47e8",
+    "Diagnostics": [
+      {
+        "Severity": 0,
+        "Pos": {
+          "File": "testdata/conformance/ApplicationLayerValidationTest-3.cml",
+          "Line": 5,
+          "Col": 7
+        },
+        "Message": "The command or operation 'operationB' is not part of the 'ContextA' Bounded Context. Please ensure that your workflow only uses commands, operations and events that are part of the same Bounded Context."
+      }
+    ]
+  },
+  {
+    "File": "conformance/ApplicationLayerValidationTest-4.cml",
+    "PrintedSHA256": "4d1598340c64018344baaddc2af441f25c4bd805be6cf0c30ffaa78120f9d4fd",
+    "Diagnostics": [
+      {
+        "Severity": 0,
+        "Pos": {
+          "File": "testdata/conformance/ApplicationLayerValidationTest-4.cml",
+          "Line": 7,
+          "Col": 7
+        },
+        "Message": "'STATE3' is not a state of the Aggregate 'AggA'."
+      }
+    ]
+  },
+  {
+    "File": "conformance/ApplicationLayerValidationTest-5.cml",
+    "PrintedSHA256": "17e2ca86ea24920d782df70f2d00ee6d450d786bd1b4989167fec206d0161056",
+    "Diagnostics": [
+      {
+        "Severity": 0,
+        "Pos": {
+          "File": "testdata/conformance/ApplicationLayerValidationTest-5.cml",
+          "Line": 7,
+          "Col": 7
+        },
+        "Message": "'STATE3' is not a state of the Aggregate 'AggA'."
+      }
+    ]
+  },
+  {
+    "File": "conformance/ApplicationLayerValidationTest-6.cml",
+    "PrintedSHA256": "82cc74540077d6fb332b2b5914be6d15074e17076a0a397098ad773b83dac0e6"
+  },
+  {
+    "File": "conformance/ApplicationLayerValidationTest-7.cml",
+    "PrintedSHA256": "01d56cc966e34bfb857f2c114a5581d8241378652ce7e053f6d27f1bd1e4228b",
+    "Diagnostics": [
+      {
+        "Severity": 0,
+        "Pos": {
+          "File": "testdata/conformance/ApplicationLayerValidationTest-7.cml",
+          "Line": 5,
+          "Col": 7
+        },
+        "Message": "The Bounded Context 'ContextB' is not reachable through Context Map relationships. Maybe you want to create a relationship with this context?"
+      }
+    ]
+  },
+  {
+    "File": "conformance/ApplicationLayerValidationTest-8.cml",
+    "PrintedSHA256": "a1b577e93f8ceeaa801415c056478dc51f1cb2c8cde560020d2bdb43f774a999",
+    "Diagnostics": [
+      {
+        "Severity": 0,
+        "Pos": {
+          "File": "testdata/conformance/ApplicationLayerValidationTest-8.cml",
+          "Line": 9,
+          "Col": 7
+        },
+        "Message": "The Bounded Context 'ContextB' is not reachable through Context Map relationships. Maybe you want to create a relationship with this context?"
+      }
+    ]
+  },
+  {
+    "File": "conformance/ApplicationLayerValidationTest-9.cml",
+    "PrintedSHA256": "43d5e1bbe6f4b175120a816a024e346f69c53b5f83cff16667df4e3e4239d8ac",
+    "Diagnostics": [
+      {
+        "Severity": 0,
+        "Pos": {
+          "File": "testdata/conformance/ApplicationLayerValidationTest-9.cml",
+          "Line": 12,
+          "Col": 7
+        },
+        "Message": "The Bounded Context 'ContextB' is not reachable through Context Map relationships. Maybe you want to create a relationship with this context?"
+      }
+    ]
+  },
+  {
+    "File": "conformance/BoundedContextDSLParsingTest-0.cml",
+    "PrintedSHA256": "83cdc790973ceb78d7c9c6e3cc5bb6dd79210ac8aebd599dfa244907d88e8537"
+  },
+  {
+    "File": "conformance/BoundedContextDSLParsingTest-1.cml",
+    "PrintedSHA256": "7f4eafe829b29f5b32e6dfeea1c39a1dbcb99913c5d7f80fad2d3284e970f2c0"
+  },
+  {
+    "File": "conformance/BoundedContextDSLParsingTest-10.cml",
+    "PrintedSHA256": "de773d2ba65b4d48365d365c83c0064420c371d287a8db801377ab4be69cf6e7"
+  },
+  {
+    "File": "conformance/BoundedContextDSLParsingTest-11.cml",
+    "PrintedSHA256": "a8585095e40d5b4ba7add6685add9ab76a25986a681e169e326761a3e2c46deb",
+    "Diagnostics": [
+      {
+        "Severity": 0,
+        "Pos": {
+          "File": "testdata/conformance/BoundedContextDSLParsingTest-11.cml",
+          "Line": 2,
+          "Col": 4
+        },
+        "Message": "Only teams can realize bounded contexts. 'NotATeam' is not a team!"
+      }
+    ]
+  },
+  {
+    "File": "conformance/BoundedContextDSLParsingTest-12.cml",
+    "PrintedSHA256": "9cec70a434eb839c4856f6aa280fcc1117aa60aa61053121b56635f3bee195c1"
+  },
+  {
+    "File": "conformance/BoundedContextDSLParsingTest-13.cml",
+    "PrintedSHA256": "391cf9161b11b33397422314b3d94b3d24d5ba5b709dc784b522669d92e752cf"
+  },
+  {
+    "File": "conformance/BoundedContextDSLParsingTest-2.cml",
+    "PrintedSHA256": "87dc72dafaef0fa33066efb4e53cdf0c18260f44cacd91bf5d1d474d0fcd1224"
+  },
+  {
+    "File": "conformance/BoundedContextDSLParsingTest-3.cml",
+    "PrintedSHA256": "0f7155fb4ae2236371e1c909e72dd5f5169483f6d076a6d3f7ce6bdf0120c2dc"
+  },
+  {
+    "File": "conformance/BoundedContextDSLParsingTest-4.cml",
+    "PrintedSHA256": "52cb1b0d7daebd1ef92a7ad634324ec96c386e360d06ff672f6c85d251a46e35"
+  },
+  {
+    "File": "conformance/BoundedContextDSLParsingTest-5.cml",
+    "PrintedSHA256": "95036ed92582b0a636ee1785500a1637e41561ff44b7dbe1da8e3b7557572c51"
+  },
+  {
+    "File": "conformance/BoundedContextDSLParsingTest-6.cml",
+    "PrintedSHA256": "e3916b3d0d414f58e86522ee7befee30c58032bb33ac6969c8ccf594d1600126"
+  },
+  {
+    "File": "conformance/BoundedContextDSLParsingTest-7.cml",
+    "PrintedSHA256": "fad0737182ee138991ed288b983ee3a7227e7bf2f948def25748b1f32ff38599"
+  },
+  {
+    "File": "conformance/BoundedContextDSLParsingTest-8.cml",
+    "PrintedSHA256": "3a07627b360a6f98ddd62ae2a5efa1d77ab00966bd2d158c9df8474202b1bf13"
+  },
+  {
+    "File": "conformance/BoundedContextDSLParsingTest-9.cml",
+    "PrintedSHA256": "41e01ef8db39878c1fafd36b7aa6164beec665f40a01290e3754d313ce3bd20b"
+  },
+  {
+    "File": "conformance/ContextMapDSLParsingTest-0.cml",
+    "PrintedSHA256": "4ab9491d8e3072a818621ee91b03ecd78bfd767bbaff9b0003fb6c800bddab00"
+  },
+  {
+    "File": "conformance/ContextMapDSLParsingTest-1.cml",
+    "PrintedSHA256": "b18adec77ca921abda66a5ab857d6e8ab72e7082e9db607b977ab125a0e22d11"
+  },
+  {
+    "File": "conformance/ContextMapDSLParsingTest-10.cml",
+    "PrintedSHA256": "ab3467639dc453678e42a1bf722b3c6444a725ed3da6488ec4ed2050831be0cc"
+  },
+  {
+    "File": "conformance/ContextMapDSLParsingTest-2.cml",
+    "PrintedSHA256": "d9b9f48f582db0fdd0f11979e080f4682df0c9b4a97251d28f4c7e52ac4127cc"
+  },
+  {
+    "File": "conformance/ContextMapDSLParsingTest-3.cml",
+    "PrintedSHA256": "d9b9f48f582db0fdd0f11979e080f4682df0c9b4a97251d28f4c7e52ac4127cc"
+  },
+  {
+    "File": "conformance/ContextMapDSLParsingTest-4.cml",
+    "PrintedSHA256": "09099dc21239162ce0c06e7e012b997af3e59ce04d5f4fe1644f6aa3523c13be"
+  },
+  {
+    "File": "conformance/ContextMapDSLParsingTest-5.cml",
+    "PrintedSHA256": "f9b976c7420d61d0b72cd7f61868239ebba86e6f7c9eff4f976b74a67271b644"
+  },
+  {
+    "File": "conformance/ContextMapDSLParsingTest-6.cml",
+    "PrintedSHA256": "483c7a81705e74f9062f72b00aa4b9aa8aaf610d307cae047d8a26367a6da9a8",
+    "Diagnostics": [
+      {
+        "Severity": 1,
+        "Pos": {
+          "File": "testdata/conformance/ContextMapDSLParsingTest-6.cml",
+          "Line": 2,
+          "Col": 4
+        },
+        "Message": "Your Context Map is of the type ORGANIZATIONAL but does not contain Bounded Contexts of the type TEAM. This type of Context Map is intended to model team relationships."
+      }
+    ]
+  },
+  {
+    "File": "conformance/ContextMapDSLParsingTest-7.cml",
+    "PrintedSHA256": "f10eb0dac7a39c2aa9dbd45746f854fc3d449dca9b3376dff90b70ddbde0e463",
+    "Diagnostics": [
+      {
+        "Severity": 0,
+        "Pos": {
+          "File": "testdata/conformance/ContextMapDSLParsingTest-7.cml",
+          "Line": 2,
+          "Col": 4
+        },
+        "Message": "A Bounded Context of type 'TEAM' is not allowed on a SYSTEM_LANDSCAPE map."
+      }
+    ]
+  },
+  {
+    "File": "conformance/ContextMapDSLParsingTest-8.cml",
+    "PrintedSHA256": "d9b9f48f582db0fdd0f11979e080f4682df0c9b4a97251d28f4c7e52ac4127cc"
+  },
+  {
+    "File": "conformance/ContextMapDSLParsingTest-9.cml",
+    "PrintedSHA256": "99204748f342a4e5814bff3b2c393b4375d8e623eb76381aeb71f5541d5bd949",
+    "Diagnostics": [
+      {
+        "Severity": 0,
+        "Pos": {
+          "File": "testdata/conformance/ContextMapDSLParsingTest-9.cml",
+          "Line": 7,
+          "Col": 6
+        },
+        "Message": "Bounded context relationships must be declared between two different bounded contexts."
+      }
+    ]
+  },
+  {
+    "File": "conformance/DomainDSLParsingTest-0.cml",
+    "PrintedSHA256": "1f73875b5b546b6205a7f2a6534cd8b5dc5542ec513e26048352a93c0ce0ebdd"
+  },
+  {
+    "File": "conformance/DomainDSLParsingTest-1.cml",
+    "PrintedSHA256": "a724e2d1ecd982a04133778c74180e028b3daad46e53a84e9f82fa0f6b29e4a3"
+  },
+  {
+    "File": "conformance/DomainDSLParsingTest-10.cml",
+    "PrintedSHA256": "3581badbde46f20601c98e40d3bf9f9d3006adab42df201f708e34c8ef3ea5e9"
+  },
+  {
+    "File": "conformance/DomainDSLParsingTest-11.cml",
+    "PrintedSHA256": "0f54cedf469777f4c136f80e7a1f8e7b73433e57f298284360a17b9ff3967eb5"
+  },
+  {
+    "File": "conformance/DomainDSLParsingTest-12.cml",
+    "PrintedSHA256": "0ba1b05b5059b4e3505b8fd5a410f471c0d660509e2b27c48ef4db6a92d0eda6"
+  },
+  {
+    "File": "conformance/DomainDSLParsingTest-13.cml",
+    "PrintedSHA256": "313656e36c0c6d0c1986b6237332614aba2880650335a3a83a5a14cf062ccc67"
+  },
+  {
+    "File": "conformance/DomainDSLParsingTest-2.cml",
+    "PrintedSHA256": "c339e0378e89a1347e1b79fcbb8e8704bf248d3d1f5adafb7044d6f608bf60a3"
+  },
+  {
+    "File": "conformance/DomainDSLParsingTest-3.cml",
+    "PrintedSHA256": "a998d141ddfcb440436f100d94694a3b67ebd26dccb7ca78099fc793aeb1c9bc"
+  },
+  {
+    "File": "conformance/DomainDSLParsingTest-4.cml",
+    "PrintedSHA256": "d388d06f917880778cabaff36faaee247115e8cea98b18f521e9e5e23c593b25"
+  },
+  {
+    "File": "conformance/DomainDSLParsingTest-5.cml",
+    "PrintedSHA256": "0f54cedf469777f4c136f80e7a1f8e7b73433e57f298284360a17b9ff3967eb5"
+  },
+  {
+    "File": "conformance/DomainDSLParsingTest-6.cml",
+    "PrintedSHA256": "99e3b97cb4d1f17df9d44112b4a0127bbe2e6872a47c032b4e547c66d864f897"
+  },
+  {
+    "File": "conformance/DomainDSLParsingTest-7.cml",
+    "PrintedSHA256": "15bbb0287d3dbb4e96d8b477fd0b2adfb1c1b8739065882225cfc0adedb0c547",
+    "Diagnostics": [
+      {
+        "Severity": 0,
+        "Pos": {
+          "File": "testdata/conformance/DomainDSLParsingTest-7.cml",
+          "Line": 2,
+          "Col": 4
+        },
+        "Message": "The subdomain 'CoreDomain' is already implemented through its domain 'Insurance'."
+      }
+    ]
+  },
+  {
+    "File": "conformance/DomainDSLParsingTest-8.cml",
+    "PrintedSHA256": "8143c40552c4e8ea3e761dc4d1692da35b32326e815028bac7c5fe478a5c76e9",
+    "Diagnostics": [
+      {
+        "Severity": 1,
+        "Pos": {
+          "File": "testdata/conformance/DomainDSLParsingTest-8.cml",
+          "Line": 2,
+          "Col": 4
+        },
+        "Message": "Are you sure you want to implement multiple Domains within one Bounded Context? A Bounded Context should typically implement only a part of your Domain; one or multiple Subdomains."
+      }
+    ]
+  },
+  {
+    "File": "conformance/DomainDSLParsingTest-9.cml",
+    "PrintedSHA256": "1323f166d02aa6f47afc1f22d569776ab951789a13b6eb0634a79da531b0305c"
+  },
+  {
+    "File": "conformance/DomainObjectValidatorTest-0.cml",
+    "PrintedSHA256": "d7591c9b8f5e95a3d4c9317c963d1bff8e02a66fcee967f9d5c540f5402bdb17"
+  },
+  {
+    "File": "conformance/DomainObjectValidatorTest-1.cml",
+    "PrintedSHA256": "c44c0a8592d502d2e9758bfd27dbe60f1dff34a63afae0010e608493bc854f1d"
+  },
+  {
+    "File": "conformance/DomainObjectValidatorTest-10.cml",
+    "PrintedSHA256": "868612c00427d3365b99413c2e604c65175d96440414ac61f394e82b39b33b90"
+  },
+  {
+    "File": "conformance/DomainObjectValidatorTest-2.cml",
+    "PrintedSHA256": "6c8bf8be1689c2cda819de0bbe7840cd4d88118347db131a6a05ff7f3be47114"
+  },
+  {
+    "File": "conformance/DomainObjectValidatorTest-3.cml",
+    "PrintedSHA256": "1217d4183ff2c72398027fe9f1a8d699e895068c8e41b19ddd1623e27c449add",
+    "Diagnostics": [
+      {
+        "Severity": 1,
+        "Pos": {
+          "File": "testdata/conformance/DomainObjectValidatorTest-3.cml",
+          "Line": 4,
+          "Col": 6
+        },
+        "Message": "The name 'TestEntity' is used for multiple domain objects. We suggest to keep the names of domain objects distinct."
+      },
+      {
+        "Severity": 1,
+        "Pos": {
+          "File": "testdata/conformance/DomainObjectValidatorTest-3.cml",
+          "Line": 9,
+          "Col": 6
+        },
+        "Message": "The name 'TestEntity' is used for multiple domain objects. We suggest to keep the names of domain objects distinct."
+      }
+    ]
+  },
+  {
+    "File": "conformance/DomainObjectValidatorTest-4.cml",
+    "PrintedSHA256": "3f31de47734c95daab92829712a99fde04164cb13aa37ae7300fa148b4c5cc90",
+    "Diagnostics": [
+      {
+        "Severity": 1,
+        "Pos": {
+          "File": "testdata/conformance/DomainObjectValidatorTest-4.cml",
+          "Line": 4,
+          "Col": 6
+        },
+        "Message": "The name 'TestEntity' is used for multiple domain objects. We suggest to keep the names of domain objects distinct."
+      },
+      {
+        "Severity": 1,
+        "Pos": {
+          "File": "testdata/conformance/DomainObjectValidatorTest-4.cml",
+          "Line": 9,
+          "Col": 6
+        },
+        "Message": "The name 'TestEntity' is used for multiple domain objects. We suggest to keep the names of domain objects distinct."
+      },
+      {
+        "Severity": 1,
+        "Pos": {
+          "File": "testdata/conformance/DomainObjectValidatorTest-4.cml",
+          "Line": 13,
+          "Col": 7
+        },
+        "Message": "The reference to the type 'TestEntity' is ambiguous, since there exist multiple domain objects with that name in your model. We suggest to keep the names of domain objects distinct."
+      }
+    ]
+  },
+  {
+    "File": "conformance/DomainObjectValidatorTest-5.cml",
+    "PrintedSHA256": "91c1fa4c4ef6ef492d53852fbe7de6d30724cbf978b607c548a271b31817a4a8",
+    "Diagnostics": [
+      {
+        "Severity": 1,
+        "Pos": {
+          "File": "testdata/conformance/DomainObjectValidatorTest-5.cml",
+          "Line": 10,
+          "Col": 7
+        },
+        "Message": "The object 'TestEntity' is not part of this Bounded Context and not reachable through Context Map relationships. Maybe you want to create a relationship with the context that contains that object?"
+      }
+    ]
+  },
+  {
+    "File": "conformance/DomainObjectValidatorTest-6.cml",
+    "PrintedSHA256": "08b837ae77fb4c64eefefa6977c13d651027f65fcb7d3052d389ef9545965773"
+  },
+  {
+    "File": "conformance/DomainObjectValidatorTest-7.cml",
+    "PrintedSHA256": "fccacb2bf02e5a47055907016052c936553e3766172a8c5bd1a8e9c56da60d9a"
+  },
+  {
+    "File": "conformance/DomainObjectValidatorTest-8.cml",
+    "PrintedSHA256": "e8d0297873cb7de92891612463220808a1f666a44a7c73eeca848ac01744baca"
+  },
+  {
+    "File": "conformance/DomainObjectValidatorTest-9.cml",
+    "PrintedSHA256": "a70dcf3cc10910e8073b2c9a0949696afbe8f4350c2a205066fd5472f4461141"
+  },
+  {
+    "File": "conformance/StakeholderDSLParsingTest-0.cml",
+    "PrintedSHA256": "fd899eecc8c9552331b202db521da638e108d360ee6f02447b4b01f1bd10be66"
+  },
+  {
+    "File": "conformance/StakeholderDSLParsingTest-1.cml",
+    "PrintedSHA256": "0a06bcb819ad5eb9a6f406035a8db58e92d6cd287b8fe33e4a271efbed08e7c2"
+  },
+  {
+    "File": "conformance/StakeholderDSLParsingTest-10.cml",
+    "PrintedSHA256": "562e5ef92c99039207db0767ec69a109cc85cb8666def165dfee0701bd20f6f6"
+  },
+  {
+    "File": "conformance/StakeholderDSLParsingTest-11.cml",
+    "PrintedSHA256": "562e5ef92c99039207db0767ec69a109cc85cb8666def165dfee0701bd20f6f6"
+  },
+  {
+    "File": "conformance/StakeholderDSLParsingTest-12.cml",
+    "PrintedSHA256": "9ccb16d4b29f25b438a184850798cc885bbce06b968b9d83d518483d4eee09c9"
+  },
+  {
+    "File": "conformance/StakeholderDSLParsingTest-13.cml",
+    "PrintedSHA256": "9ccb16d4b29f25b438a184850798cc885bbce06b968b9d83d518483d4eee09c9"
+  },
+  {
+    "File": "conformance/StakeholderDSLParsingTest-14.cml",
+    "PrintedSHA256": "02a515b8c66981518d9697d7b91830a1f8db72104e0174b2d3b395e4fba17501"
+  },
+  {
+    "File": "conformance/StakeholderDSLParsingTest-15.cml",
+    "PrintedSHA256": "02a515b8c66981518d9697d7b91830a1f8db72104e0174b2d3b395e4fba17501"
+  },
+  {
+    "File": "conformance/StakeholderDSLParsingTest-2.cml",
+    "PrintedSHA256": "ce51f71b955cebdfcc6e50171e7c73734662276304efb58fbe290c35239f15c0"
+  },
+  {
+    "File": "conformance/StakeholderDSLParsingTest-3.cml",
+    "PrintedSHA256": "d8bf06f2106ca3d70a95062dff387cc3b41d6042003d74e7cda9cb42c2301449"
+  },
+  {
+    "File": "conformance/StakeholderDSLParsingTest-4.cml",
+    "PrintedSHA256": "38e8ba491ece0d1363969ad15715dafcb96e46c02da5e6fe27054802b58041ed"
+  },
+  {
+    "File": "conformance/StakeholderDSLParsingTest-5.cml",
+    "PrintedSHA256": "aba9c65f4d81632ed9efd949131ffa2563a48b3e3ce74f37a86542feef9f6a8d"
+  },
+  {
+    "File": "conformance/StakeholderDSLParsingTest-6.cml",
+    "PrintedSHA256": "a6b43c889f9ba46c733cb23550f3b94fa87cdf64bc47830cbbcdde18a202e6a6"
+  },
+  {
+    "File": "conformance/StakeholderDSLParsingTest-7.cml",
+    "PrintedSHA256": "dc8200c225aba855e77533136886e0f244caa57db2aa8e46d482c28459d03152"
+  },
+  {
+    "File": "conformance/StakeholderDSLParsingTest-8.cml",
+    "PrintedSHA256": "fb58cc2329a8474592b6b9352d5c703538a857a30de1b39bdc35a433603396dc"
+  },
+  {
+    "File": "conformance/StakeholderDSLParsingTest-9.cml",
+    "PrintedSHA256": "fb58cc2329a8474592b6b9352d5c703538a857a30de1b39bdc35a433603396dc"
+  },
+  {
+    "File": "conformance/SymmetricRelationshipDSLParsingTest-0.cml",
+    "PrintedSHA256": "efd042a97fe6e574f9faa6279d12cdc1e4a2017a365e8a3324c588af37193213"
+  },
+  {
+    "File": "conformance/SymmetricRelationshipDSLParsingTest-1.cml",
+    "Error": "../testdata/conformance/SymmetricRelationshipDSLParsingTest-1.cml:6:6: unexpected \u003c in Context Map"
+  },
+  {
+    "File": "conformance/SymmetricRelationshipDSLParsingTest-2.cml",
+    "PrintedSHA256": "2e6ff492f0e4541dce00ec75358237ce471a3c99711850eb540f5e5622282cc1"
+  },
+  {
+    "File": "conformance/SymmetricRelationshipDSLParsingTest-3.cml",
+    "Error": "../testdata/conformance/SymmetricRelationshipDSLParsingTest-3.cml:6:6: unexpected \u003c in Context Map"
+  },
+  {
+    "File": "conformance/SymmetricRelationshipDSLParsingTest-4.cml",
+    "PrintedSHA256": "6f73bcc8bab856cb9cc3c70335ca5167f1ecc341f04d0476531d33f4eaf29812"
+  },
+  {
+    "File": "conformance/SymmetricRelationshipDSLParsingTest-5.cml",
+    "PrintedSHA256": "e9774e799fb3038a501ee990764284992b794579becac93fad48b438860f54a5"
+  },
+  {
+    "File": "conformance/SymmetricRelationshipDSLParsingTest-6.cml",
+    "PrintedSHA256": "25723fa658042a3bb5aff2936ebd38468bb26c323435021dfaebc882a1bb1f49"
+  },
+  {
+    "File": "conformance/TacticDDDAssociatonsGrammarTest-0.cml",
+    "PrintedSHA256": "2e9389d1c205d91794af02f7959541bda16819388187ef1ae89fa159339965f0"
+  },
+  {
+    "File": "conformance/TacticDDDAssociatonsGrammarTest-1.cml",
+    "PrintedSHA256": "a3803a5ad10b1c9eaa3de312a0fc808fe2e48930e3434f4adeb3382254768ad6"
+  },
+  {
+    "File": "conformance/TacticDDDAssociatonsGrammarTest-2.cml",
+    "PrintedSHA256": "661645639f17b0b0eba7b8d1e85f5276b6b3bb102a97e52894a864897a0a5a57",
+    "Diagnostics": [
+      {
+        "Severity": 0,
+        "Pos": {
+          "File": "testdata/conformance/TacticDDDAssociatonsGrammarTest-2.cml",
+          "Line": 4,
+          "Col": 6
+        },
+        "Message": "Couldn't resolve reference to 'Address'."
+      }
+    ]
+  },
+  {
+    "File": "conformance/TacticDDDAssociatonsGrammarTest-3.cml",
+    "PrintedSHA256": "8c1a1f0e4439602841d4152a14799a55d1a3462e79432bdc3259c2e6526fa528",
+    "Diagnostics": [
+      {
+        "Severity": 0,
+        "Pos": {
+          "File": "testdata/conformance/TacticDDDAssociatonsGrammarTest-3.cml",
+          "Line": 10,
+          "Col": 6
+        },
+        "Message": "Couldn't resolve reference to 'Address'."
+      }
+    ]
+  },
+  {
+    "File": "conformance/TacticDDDDomainObjectsTest-0.cml",
+    "PrintedSHA256": "6d16a4fc67a776e48b00f15dc5297a9c6572d432912e2d0fe26982d64693e4ff"
+  },
+  {
+    "File": "conformance/TacticDDDDomainObjectsTest-1.cml",
+    "PrintedSHA256": "5d0870d40b117a2554eedf0b23a7ec112512afa927e38f00b91ebc8a429636d0"
+  },
+  {
+    "File": "conformance/TacticDDDDomainObjectsTest-2.cml",
+    "PrintedSHA256": "0ad8f174170ec3b0f66f9fbcac0b184db16cf03e4f9ec8d66db3e1ee55f00065"
+  },
+  {
+    "File": "conformance/TacticDDDDomainObjectsTest-3.cml",
+    "PrintedSHA256": "0ad8f174170ec3b0f66f9fbcac0b184db16cf03e4f9ec8d66db3e1ee55f00065"
+  },
+  {
+    "File": "conformance/TacticDDDDomainServicesTest-0.cml",
+    "PrintedSHA256": "5bdb291e961e855a4b9a15c532b707657d07fc305f22a2ed8b583e17e47888e4"
+  },
+  {
+    "File": "conformance/TacticDDDDomainServicesTest-1.cml",
+    "PrintedSHA256": "076a60a7597a41d9eac0df067d93c06814381b0172b6cb42be4f12b9c64a51eb"
+  },
+  {
+    "File": "conformance/TacticDDDDomainServicesTest-2.cml",
+    "PrintedSHA256": "076a60a7597a41d9eac0df067d93c06814381b0172b6cb42be4f12b9c64a51eb"
+  },
+  {
+    "File": "conformance/TacticDDDListOfEnumsTest-0.cml",
+    "PrintedSHA256": "1406dd27b3350ca7eb8292993ee6f18d104af2e9bb4881ab136fa028f03df711"
+  },
+  {
+    "File": "conformance/TacticDDDModuleValidationTest-0.cml",
+    "PrintedSHA256": "2f52b5314366b7a414dd29c727856b504e6dd1fd97e81b6d6991113ef9b03c8e",
+    "Diagnostics": [
+      {
+        "Severity": 1,
+        "Pos": {
+          "File": "testdata/conformance/TacticDDDModuleValidationTest-0.cml",
+          "Line": 3,
+          "Col": 5
+        },
+        "Message": "The module 'TestModule' contains Services and/or Entities that are not part of an Aggregate. The MDSL and Service Cutter generators ignore them. Please move them into an Aggregate."
+      }
+    ]
+  },
+  {
+    "File": "conformance/TacticDDDModuleValidationTest-1.cml",
+    "PrintedSHA256": "656752d63b3e2dc6e77f8e7a76136d418f154182f9a101e6ad3a4a1085e26bb0",
+    "Diagnostics": [
+      {
+        "Severity": 1,
+        "Pos": {
+          "File": "testdata/conformance/TacticDDDModuleValidationTest-1.cml",
+          "Line": 3,
+          "Col": 5
+        },
+        "Message": "The module 'TestModule' contains Services and/or Entities that are not part of an Aggregate. The MDSL and Service Cutter generators ignore them. Please move them into an Aggregate."
+      }
+    ]
+  },
+  {
+    "File": "conformance/TacticDDDModuleValidationTest-2.cml",
+    "PrintedSHA256": "34298c31f889451cfecb82c871c5b5caed254cdb585b80260b9196c2f8eca8b6",
+    "Diagnostics": [
+      {
+        "Severity": 1,
+        "Pos": {
+          "File": "testdata/conformance/TacticDDDModuleValidationTest-2.cml",
+          "Line": 3,
+          "Col": 5
+        },
+        "Message": "The module 'TestModule' contains Services and/or Entities that are not part of an Aggregate. The MDSL and Service Cutter generators ignore them. Please move them into an Aggregate."
+      }
+    ]
+  },
+  {
+    "File": "conformance/TacticDDDOperationsGrammarAndValidationTest-0.cml",
+    "PrintedSHA256": "464b05052bf4e5d47ef4fb61d30758910e3cf8a4377886d876a6043539126ba0"
+  },
+  {
+    "File": "conformance/TacticDDDOperationsGrammarAndValidationTest-1.cml",
+    "PrintedSHA256": "7efcbb1f47cdf0784fdb6b3870a9b409739805cd5ee5911e7321dcccde96f85a"
+  },
+  {
+    "File": "conformance/TacticDDDOperationsGrammarAndValidationTest-10.cml",
+    "PrintedSHA256": "218a3808047b63bf0fd243933e76a701ca5bee22a653268a60a854b132297ef8"
+  },
+  {
+    "File": "conformance/TacticDDDOperationsGrammarAndValidationTest-11.cml",
+    "PrintedSHA256": "e4da90f016ec19b86be44d761475f665d4b764506c60d12c19df9e1d9ac09a52"
+  },
+  {
+    "File": "conformance/TacticDDDOperationsGrammarAndValidationTest-12.cml",
+    "PrintedSHA256": "4160b21f1434bc27006f70ae6e4ac87e7606066db1d16daaf038b002f2d98d59",
+    "Diagnostics": [
+      {
+        "Severity": 0,
+        "Pos": {
+          "File": "testdata/conformance/TacticDDDOperationsGrammarAndValidationTest-12.cml",
+          "Line": 5,
+          "Col": 7
+        },
+        "Message": "'OTHERSTATE' is not a state of the Aggregate 'TestAggregate'."
+      }
+    ]
+  },
+  {
+    "File": "conformance/TacticDDDOperationsGrammarAndValidationTest-13.cml",
+    "PrintedSHA256": "b0acd192dcb796d847e82cacbac33f6779cc1f270626152418ed18aa31464a83",
+    "Diagnostics": [
+      {
+        "Severity": 0,
+        "Pos": {
+          "File": "testdata/conformance/TacticDDDOperationsGrammarAndValidationTest-13.cml",
+          "Line": 5,
+          "Col": 7
+        },
+        "Message": "'OTHERSTATE' is not a state of the Aggregate 'TestAggregate'."
+      }
+    ]
+  },
+  {
+    "File": "conformance/TacticDDDOperationsGrammarAndValidationTest-14.cml",
+    "PrintedSHA256": "869bd857923a93bd8c77e0f1e29f3e0dd93a78fd1f3018d431aeba1121f7795a",
+    "Diagnostics": [
+      {
+        "Severity": 0,
+        "Pos": {
+          "File": "testdata/conformance/TacticDDDOperationsGrammarAndValidationTest-14.cml",
+          "Line": 5,
+          "Col": 7
+        },
+        "Message": "'OTHERSTATE' is not a state of the Aggregate 'TestAggregate'."
+      }
+    ]
+  },
+  {
+    "File": "conformance/TacticDDDOperationsGrammarAndValidationTest-15.cml",
+    "PrintedSHA256": "e0dc9d763d77439e19351b385e3a3f05d3cdf9c9d9a6da019eff09a40632d6eb",
+    "Diagnostics": [
+      {
+        "Severity": 0,
+        "Pos": {
+          "File": "testdata/conformance/TacticDDDOperationsGrammarAndValidationTest-15.cml",
+          "Line": 5,
+          "Col": 7
+        },
+        "Message": "'OTHERSTATE' is not a state of the Aggregate 'TestAggregate'."
+      }
+    ]
+  },
+  {
+    "File": "conformance/TacticDDDOperationsGrammarAndValidationTest-16.cml",
+    "PrintedSHA256": "1cdb7e65f03acef046e75cd9f9cb3c96f50e4d8855af06a13214db657a560fa8",
+    "Diagnostics": [
+      {
+        "Severity": 1,
+        "Pos": {
+          "File": "testdata/conformance/TacticDDDOperationsGrammarAndValidationTest-16.cml",
+          "Line": 3,
+          "Col": 5
+        },
+        "Message": "The module 'TestModule' contains Services and/or Entities that are not part of an Aggregate. The MDSL and Service Cutter generators ignore them. Please move them into an Aggregate."
+      }
+    ]
+  },
+  {
+    "File": "conformance/TacticDDDOperationsGrammarAndValidationTest-2.cml",
+    "PrintedSHA256": "af8522547c079e3669909ee6edfd9034598656500af6b2bdb2f016f625a81af9"
+  },
+  {
+    "File": "conformance/TacticDDDOperationsGrammarAndValidationTest-3.cml",
+    "PrintedSHA256": "2a0524fe26e11b79b6bd38794ef418e0207387d2206fef8fe827eba2e9b83d50"
+  },
+  {
+    "File": "conformance/TacticDDDOperationsGrammarAndValidationTest-4.cml",
+    "PrintedSHA256": "744784075799550a9168f63ff626b4b64833b5971c5c04d6a135d901c95b9669"
+  },
+  {
+    "File": "conformance/TacticDDDOperationsGrammarAndValidationTest-5.cml",
+    "PrintedSHA256": "0f8abdf64768bbb4afe545cb0cb26380bcd5da4e4cfa9c8c90b1cf31254bd792"
+  },
+  {
+    "File": "conformance/TacticDDDOperationsGrammarAndValidationTest-6.cml",
+    "PrintedSHA256": "fd94612f1810055cf6b6928820b2186aba7747c152ebb6990eff451a9e13022d"
+  },
+  {
+    "File": "conformance/TacticDDDOperationsGrammarAndValidationTest-7.cml",
+    "PrintedSHA256": "b03d5a5bf026deb018ecef03f8f7dee2119129397e81e225c38e5e92a0e9c81b"
+  },
+  {
+    "File": "conformance/TacticDDDOperationsGrammarAndValidationTest-8.cml",
+    "PrintedSHA256": "389c378c7950f5be20b2324d4d76539c12cab4ce418ee99c0786d09edd03a52f"
+  },
+  {
+    "File": "conformance/TacticDDDOperationsGrammarAndValidationTest-9.cml",
+    "PrintedSHA256": "eb294e91f3080fff695783cb5d7e211a918e9d7ff0169800e7752df035961691"
+  },
+  {
+    "File": "conformance/UniquenessValidatorTest-0.cml",
+    "PrintedSHA256": "1e3ff1ebe80c9d0fcc055020ea035b7aff6e63faf1df3d68936e220ef2e3b3e2",
+    "Diagnostics": [
+      {
+        "Severity": 0,
+        "Pos": {
+          "File": "testdata/conformance/UniquenessValidatorTest-0.cml",
+          "Line": 2,
+          "Col": 4
+        },
+        "Message": "Multiple bounded contexts with the name 'ContextA' have been declared."
+      },
+      {
+        "Severity": 0,
+        "Pos": {
+          "File": "testdata/conformance/UniquenessValidatorTest-0.cml",
+          "Line": 4,
+          "Col": 4
+        },
+        "Message": "Multiple bounded contexts with the name 'ContextA' have been declared."
+      }
+    ]
+  },
+  {
+    "File": "conformance/UniquenessValidatorTest-1.cml",
+    "PrintedSHA256": "e9b3cee8f3933b189124a4fbcaa5cace6f5d045156e02fb5745912d9d9792aae",
+    "Diagnostics": [
+      {
+        "Severity": 0,
+        "Pos": {
+          "File": "testdata/conformance/UniquenessValidatorTest-1.cml",
+          "Line": 2,
+          "Col": 4
+        },
+        "Message": "Multiple domains with the name 'TestDomain' have been declared."
+      },
+      {
+        "Severity": 0,
+        "Pos": {
+          "File": "testdata/conformance/UniquenessValidatorTest-1.cml",
+          "Line": 4,
+          "Col": 4
+        },
+        "Message": "Multiple domains with the name 'TestDomain' have been declared."
+      }
+    ]
+  },
+  {
+    "File": "conformance/UniquenessValidatorTest-10.cml",
+    "PrintedSHA256": "b85e4c81ca9511e78d250cc555576dcf6e91cec6d84a5f373fa7651dde0d4bb6",
+    "Diagnostics": [
+      {
+        "Severity": 0,
+        "Pos": {
+          "File": "testdata/conformance/UniquenessValidatorTest-10.cml",
+          "Line": 5,
+          "Col": 6
+        },
+        "Message": "Multiple domain objects with the name 'Account' have been declared."
+      },
+      {
+        "Severity": 1,
+        "Pos": {
+          "File": "testdata/conformance/UniquenessValidatorTest-10.cml",
+          "Line": 4,
+          "Col": 6
+        },
+        "Message": "The name 'Account' is used for multiple domain objects. We suggest to keep the names of domain objects distinct."
+      },
+      {
+        "Severity": 1,
+        "Pos": {
+          "File": "testdata/conformance/UniquenessValidatorTest-10.cml",
+          "Line": 5,
+          "Col": 6
+        },
+        "Message": "The name 'Account' is used for multiple domain objects. We suggest to keep the names of domain objects distinct."
+      }
+    ]
+  },
+  {
+    "File": "conformance/UniquenessValidatorTest-11.cml",
+    "PrintedSHA256": "496462e1008c341a59e8b2788350743a547a958ced7196cee3ef47315d47c6f5",
+    "Diagnostics": [
+      {
+        "Severity": 0,
+        "Pos": {
+          "File": "testdata/conformance/UniquenessValidatorTest-11.cml",
+          "Line": 5,
+          "Col": 6
+        },
+        "Message": "Multiple services with the name 'TestService' have been declared in this Bounded Context."
+      }
+    ]
+  },
+  {
+    "File": "conformance/UniquenessValidatorTest-12.cml",
+    "PrintedSHA256": "20713c9d1c131dc27022c09347529c2e3b263f6596b9d33df702499a63b8fbf2",
+    "Diagnostics": [
+      {
+        "Severity": 0,
+        "Pos": {
+          "File": "testdata/conformance/UniquenessValidatorTest-12.cml",
+          "Line": 5,
+          "Col": 6
+        },
+        "Message": "Multiple services with the name 'TestService' have been declared in this Subdomain."
+      }
+    ]
+  },
+  {
+    "File": "conformance/UniquenessValidatorTest-13.cml",
+    "PrintedSHA256": "18ab0db26bf56f264090ea92448b011a739d8f0da5b1268cf34816d06b0de27e",
+    "Diagnostics": [
+      {
+        "Severity": 0,
+        "Pos": {
+          "File": "testdata/conformance/UniquenessValidatorTest-13.cml",
+          "Line": 4,
+          "Col": 6
+        },
+        "Message": "Multiple flows with the name 'TestFlow' have been declared. Please provide unique names!"
+      },
+      {
+        "Severity": 0,
+        "Pos": {
+          "File": "testdata/conformance/UniquenessValidatorTest-13.cml",
+          "Line": 6,
+          "Col": 6
+        },
+        "Message": "Multiple flows with the name 'TestFlow' have been declared. Please provide unique names!"
+      }
+    ]
+  },
+  {
+    "File": "conformance/UniquenessValidatorTest-14.cml",
+    "PrintedSHA256": "25cbb41c8035060f8f1bd72b608342db5f2bcd2603c5cf272222c8c458e80e85",
+    "Diagnostics": [
+      {
+        "Severity": 0,
+        "Pos": {
+          "File": "testdata/conformance/UniquenessValidatorTest-14.cml",
+          "Line": 4,
+          "Col": 6
+        },
+        "Message": "Multiple coordinations with the name 'TestCoordination' have been declared. Please provide unique names!"
+      },
+      {
+        "Severity": 0,
+        "Pos": {
+          "File": "testdata/conformance/UniquenessValidatorTest-14.cml",
+          "Line": 6,
+          "Col": 6
+        },
+        "Message": "Multiple coordinations with the name 'TestCoordination' have been declared. Please provide unique names!"
+      }
+    ]
+  },
+  {
+    "File": "conformance/UniquenessValidatorTest-15.cml",
+    "PrintedSHA256": "c74ef41def3579b332f6062d8c7d56fc9ef3b2706bc98a96751712348e129f63",
+    "Diagnostics": [
+      {
+        "Severity": 0,
+        "Pos": {
+          "File": "testdata/conformance/UniquenessValidatorTest-15.cml",
+          "Line": 4,
+          "Col": 6
+        },
+        "Message": "Multiple coordinations with the name 'TestCoordination' have been declared. Please provide unique names!"
+      },
+      {
+        "Severity": 0,
+        "Pos": {
+          "File": "testdata/conformance/UniquenessValidatorTest-15.cml",
+          "Line": 10,
+          "Col": 6
+        },
+        "Message": "Multiple coordinations with the name 'TestCoordination' have been declared. Please provide unique names!"
+      }
+    ]
+  },
+  {
+    "File": "conformance/UniquenessValidatorTest-2.cml",
+    "PrintedSHA256": "d551c3f17a23309504b28695790873c0cb66429b2ba171f4f1b6c11f4f792fd1",
+    "Diagnostics": [
+      {
+        "Severity": 0,
+        "Pos": {
+          "File": "testdata/conformance/UniquenessValidatorTest-2.cml",
+          "Line": 3,
+          "Col": 5
+        },
+        "Message": "The subdomain 'TestDomain' has the same name as the domain. Please define a unique subdomain name."
+      }
+    ]
+  },
+  {
+    "File": "conformance/UniquenessValidatorTest-3.cml",
+    "PrintedSHA256": "4282a8646650d406e48f9460b78a22624c7ee3451007b4d0416a36bf5e3b9ad8",
+    "Diagnostics": [
+      {
+        "Severity": 0,
+        "Pos": {
+          "File": "testdata/conformance/UniquenessValidatorTest-3.cml",
+          "Line": 3,
+          "Col": 5
+        },
+        "Message": "Multiple subdomains with the name 'TestSubdomain' have been declared."
+      },
+      {
+        "Severity": 0,
+        "Pos": {
+          "File": "testdata/conformance/UniquenessValidatorTest-3.cml",
+          "Line": 6,
+          "Col": 5
+        },
+        "Message": "Multiple subdomains with the name 'TestSubdomain' have been declared."
+      }
+    ]
+  },
+  {
+    "File": "conformance/UniquenessValidatorTest-4.cml",
+    "PrintedSHA256": "583fd53642606252620b4f930a6424f420e600cfd526de729734c7dc9e629815",
+    "Diagnostics": [
+      {
+        "Severity": 0,
+        "Pos": {
+          "File": "testdata/conformance/UniquenessValidatorTest-4.cml",
+          "Line": 3,
+          "Col": 5
+        },
+        "Message": "Duplicate name. There is already an existing Module named 'Mod'."
+      },
+      {
+        "Severity": 0,
+        "Pos": {
+          "File": "testdata/conformance/UniquenessValidatorTest-4.cml",
+          "Line": 4,
+          "Col": 5
+        },
+        "Message": "Duplicate name. There is already an existing Module named 'Mod'."
+      }
+    ]
+  },
+  {
+    "File": "conformance/UniquenessValidatorTest-5.cml",
+    "PrintedSHA256": "1b3ae191ab4de592f9929efa8f31c37c2e379bb2c6eae6c64b19fe72940b9c7d",
+    "Diagnostics": [
+      {
+        "Severity": 0,
+        "Pos": {
+          "File": "testdata/conformance/UniquenessValidatorTest-5.cml",
+          "Line": 3,
+          "Col": 5
+        },
+        "Message": "Multiple aggregates with the name 'agg' have been declared."
+      },
+      {
+        "Severity": 0,
+        "Pos": {
+          "File": "testdata/conformance/UniquenessValidatorTest-5.cml",
+          "Line": 4,
+          "Col": 5
+        },
+        "Message": "Multiple aggregates with the name 'agg' have been declared."
+      }
+    ]
+  },
+  {
+    "File": "conformance/UniquenessValidatorTest-6.cml",
+    "PrintedSHA256": "ae0858f31e4d22362ea6b3fa5123d78150873ab10b11d1a78b9497289a43584f",
+    "Diagnostics": [
+      {
+        "Severity": 0,
+        "Pos": {
+          "File": "testdata/conformance/UniquenessValidatorTest-6.cml",
+          "Line": 2,
+          "Col": 4
+        },
+        "Message": "Multiple use cases with the name 'uc' have been declared."
+      },
+      {
+        "Severity": 0,
+        "Pos": {
+          "File": "testdata/conformance/UniquenessValidatorTest-6.cml",
+          "Line": 3,
+          "Col": 4
+        },
+        "Message": "Multiple use cases with the name 'uc' have been declared."
+      }
+    ]
+  },
+  {
+    "File": "conformance/UniquenessValidatorTest-7.cml",
+    "PrintedSHA256": "cedab46edb6e383c18b3d26e2205e3fdd5467d2fc9e6e8b6e9f75d6a95b114d8",
+    "Diagnostics": [
+      {
+        "Severity": 1,
+        "Pos": {
+          "File": "testdata/conformance/UniquenessValidatorTest-7.cml",
+          "Line": 4,
+          "Col": 6
+        },
+        "Message": "The name 'Account' is used for multiple domain objects. We suggest to keep the names of domain objects distinct."
+      },
+      {
+        "Severity": 1,
+        "Pos": {
+          "File": "testdata/conformance/UniquenessValidatorTest-7.cml",
+          "Line": 7,
+          "Col": 6
+        },
+        "Message": "The name 'Account' is used for multiple domain objects. We suggest to keep the names of domain objects distinct."
+      }
+    ]
+  },
+  {
+    "File": "conformance/UniquenessValidatorTest-8.cml",
+    "PrintedSHA256": "72fdcf5ca2983e0abef370ef46b9ee0bde1e24fd2bcdce707bca6468e14e7e3c",
+    "Diagnostics": [
+      {
+        "Severity": 0,
+        "Pos": {
+          "File": "testdata/conformance/UniquenessValidatorTest-8.cml",
+          "Line": 5,
+          "Col": 6
+        },
+        "Message": "Multiple domain objects with the name 'Account' have been declared."
+      },
+      {
+        "Severity": 1,
+        "Pos": {
+          "File": "testdata/conformance/UniquenessValidatorTest-8.cml",
+          "Line": 4,
+          "Col": 6
+        },
+        "Message": "The name 'Account' is used for multiple domain objects. We suggest to keep the names of domain objects distinct."
+      },
+      {
+        "Severity": 1,
+        "Pos": {
+          "File": "testdata/conformance/UniquenessValidatorTest-8.cml",
+          "Line": 5,
+          "Col": 6
+        },
+        "Message": "The name 'Account' is used for multiple domain objects. We suggest to keep the names of domain objects distinct."
+      }
+    ]
+  },
+  {
+    "File": "conformance/UniquenessValidatorTest-9.cml",
+    "PrintedSHA256": "1c8b53cf439ec0dd0cdc6e19663f7653989682b1ec4f418e13d7d11d8cafcb7b",
+    "Diagnostics": [
+      {
+        "Severity": 0,
+        "Pos": {
+          "File": "testdata/conformance/UniquenessValidatorTest-9.cml",
+          "Line": 5,
+          "Col": 6
+        },
+        "Message": "Multiple domain objects with the name 'Account' have been declared."
+      },
+      {
+        "Severity": 1,
+        "Pos": {
+          "File": "testdata/conformance/UniquenessValidatorTest-9.cml",
+          "Line": 3,
+          "Col": 5
+        },
+        "Message": "The module 'Mod' contains Services and/or Entities that are not part of an Aggregate. The MDSL and Service Cutter generators ignore them. Please move them into an Aggregate."
+      },
+      {
+        "Severity": 1,
+        "Pos": {
+          "File": "testdata/conformance/UniquenessValidatorTest-9.cml",
+          "Line": 4,
+          "Col": 6
+        },
+        "Message": "The name 'Account' is used for multiple domain objects. We suggest to keep the names of domain objects distinct."
+      },
+      {
+        "Severity": 1,
+        "Pos": {
+          "File": "testdata/conformance/UniquenessValidatorTest-9.cml",
+          "Line": 5,
+          "Col": 6
+        },
+        "Message": "The name 'Account' is used for multiple domain objects. We suggest to keep the names of domain objects distinct."
+      }
+    ]
+  },
+  {
+    "File": "conformance/UpstreamDownstreamExposedAggregatesTest-0.cml",
+    "PrintedSHA256": "6b1a8e3436c0d43af7584c09d407c5214001888c865e8442093c34a740303b0a"
+  },
+  {
+    "File": "conformance/UpstreamDownstreamExposedAggregatesTest-1.cml",
+    "PrintedSHA256": "61dd52aaf454d183a87d1803151b3057bec3b76a9321220d9831d72162639856"
+  },
+  {
+    "File": "conformance/UpstreamDownstreamExposedAggregatesTest-2.cml",
+    "PrintedSHA256": "5ae9faf15040bd6677a93a49047ec3e6fca7903a448e4f00a2e283817272962d",
+    "Diagnostics": [
+      {
+        "Severity": 0,
+        "Pos": {
+          "File": "testdata/conformance/UpstreamDownstreamExposedAggregatesTest-2.cml",
+          "Line": 6,
+          "Col": 5
+        },
+        "Message": "The aggregate 'anotherAggregate' is not part of the upstream context 'testContext'."
+      }
+    ]
+  },
+  {
+    "File": "conformance/UpstreamDownstreamExposedAggregatesTest-3.cml",
+    "PrintedSHA256": "a175299ebecfa79310d65cb810700fb465298d55b12048bc257f7cbd4148dc17",
+    "Diagnostics": [
+      {
+        "Severity": 0,
+        "Pos": {
+          "File": "testdata/conformance/UpstreamDownstreamExposedAggregatesTest-3.cml",
+          "Line": 6,
+          "Col": 5
+        },
+        "Message": "The aggregate 'anotherAggregate' is not part of the upstream context 'testContext'."
+      }
+    ]
+  },
+  {
+    "File": "conformance/UpstreamDownstreamExposedAggregatesTest-4.cml",
+    "PrintedSHA256": "11a67a1dd75622b39f915f0e87ac81f9d0b1fefc0f5d6c12eb48d84aa6436cfa"
+  },
+  {
+    "File": "conformance/UpstreamDownstreamGovernanceRightsTest-0.cml",
+    "PrintedSHA256": "5f62f36130d16603bf366bd13495e0c3118085f40cbf786185a34025321b5864"
+  },
+  {
+    "File": "conformance/UpstreamDownstreamGovernanceRightsTest-1.cml",
+    "PrintedSHA256": "464f0282ff841a0f67893c718558e86a961be0c4f05a4a0816c8f5e2ac84111f"
+  },
+  {
+    "File": "conformance/UpstreamDownstreamGovernanceRightsTest-2.cml",
+    "PrintedSHA256": "d4b5820421949b1e8eb0aa9d971299dbc908507688573dab45b2d2f52ecdc8e5"
+  },
+  {
+    "File": "conformance/UpstreamDownstreamRelationshipDSLParsingTest-0.cml",
+    "PrintedSHA256": "2b66af7dbf298cff91dacffca666e0ff4540da511ac7762a23c9267e72182975"
+  },
+  {
+    "File": "conformance/UpstreamDownstreamRelationshipDSLParsingTest-1.cml",
+    "PrintedSHA256": "2b66af7dbf298cff91dacffca666e0ff4540da511ac7762a23c9267e72182975"
+  },
+  {
+    "File": "conformance/UpstreamDownstreamRelationshipDSLParsingTest-10.cml",
+    "Error": "../testdata/conformance/UpstreamDownstreamRelationshipDSLParsingTest-10.cml:6:6: unexpected \u003c in Context Map"
+  },
+  {
+    "File": "conformance/UpstreamDownstreamRelationshipDSLParsingTest-11.cml",
+    "Error": "../testdata/conformance/UpstreamDownstreamRelationshipDSLParsingTest-11.cml:6:6: unexpected \u003c in Context Map"
+  },
+  {
+    "File": "conformance/UpstreamDownstreamRelationshipDSLParsingTest-12.cml",
+    "PrintedSHA256": "f91f8188466744e5c43e7c07b4703173717e5905904cac2b056cb127b0900d33",
+    "Diagnostics": [
+      {
+        "Severity": 0,
+        "Pos": {
+          "File": "testdata/conformance/UpstreamDownstreamRelationshipDSLParsingTest-12.cml",
+          "Line": 6,
+          "Col": 5
+        },
+        "Message": "The OPEN-HOST SERVICE pattern is not applicable for a Customer-Supplier relationship."
+      }
+    ]
+  },
+  {
+    "File": "conformance/UpstreamDownstreamRelationshipDSLParsingTest-13.cml",
+    "PrintedSHA256": "074922c99d4dbd237aab1b16148965d879716d0b8c92080422c40ec88acf8671",
+    "Diagnostics": [
+      {
+        "Severity": 1,
+        "Pos": {
+          "File": "testdata/conformance/UpstreamDownstreamRelationshipDSLParsingTest-13.cml",
+          "Line": 6,
+          "Col": 6
+        },
+        "Message": "Are you sure you need an ANTICORRUPTION LAYER here? This pattern should not be necessarily needed in a Customer-Supplier relationship."
+      }
+    ]
+  },
+  {
+    "File": "conformance/UpstreamDownstreamRelationshipDSLParsingTest-14.cml",
+    "PrintedSHA256": "48a1c663bac798dfc7fe9b1a2922e2c43160b9bd31ec890d98fed4ca20fdaaa2",
+    "Diagnostics": [
+      {
+        "Severity": 0,
+        "Pos": {
+          "File": "testdata/conformance/UpstreamDownstreamRelationshipDSLParsingTest-14.cml",
+          "Line": 6,
+          "Col": 6
+        },
+        "Message": "The CONFORMIST pattern is not applicable for a Customer-Supplier relationship."
+      }
+    ]
+  },
+  {
+    "File": "conformance/UpstreamDownstreamRelationshipDSLParsingTest-15.cml",
+    "Error": "../testdata/conformance/UpstreamDownstreamRelationshipDSLParsingTest-15.cml:5:6: unexpected \u003c in Context Map"
+  },
+  {
+    "File": "conformance/UpstreamDownstreamRelationshipDSLParsingTest-16.cml",
+    "PrintedSHA256": "f5e32b12e429b645c80393d4ca91055b2e68d6638259deddd459765cd9b3eda1"
+  },
+  {
+    "File": "conformance/UpstreamDownstreamRelationshipDSLParsingTest-17.cml",
+    "PrintedSHA256": "ace971c744c9af0c95960e1ac391f38d5dbc96fdd2e1d61036762f906d114e1f"
+  },
+  {
+    "File": "conformance/UpstreamDownstreamRelationshipDSLParsingTest-18.cml",
+    "PrintedSHA256": "e5e3e85ae5952847efbe5fce0629ae4575eb9ddca88aaf6c3596e97e7392ce81"
+  },
+  {
+    "File": "conformance/UpstreamDownstreamRelationshipDSLParsingTest-19.cml",
+    "PrintedSHA256": "2b774df3a9ed6cddf96cebf6b8861ae0205630ac7d08056f7c652ed15c7fbbde"
+  },
+  {
+    "File": "conformance/UpstreamDownstreamRelationshipDSLParsingTest-2.cml",
+    "Error": "../testdata/conformance/UpstreamDownstreamRelationshipDSLParsingTest-2.cml:6:5: unexpected \u003c in Context Map"
+  },
+  {
+    "File": "conformance/UpstreamDownstreamRelationshipDSLParsingTest-20.cml",
+    "PrintedSHA256": "2b774df3a9ed6cddf96cebf6b8861ae0205630ac7d08056f7c652ed15c7fbbde"
+  },
+  {
+    "File": "conformance/UpstreamDownstreamRelationshipDSLParsingTest-21.cml",
+    "Error": "../testdata/conformance/UpstreamDownstreamRelationshipDSLParsingTest-21.cml:6:5: unexpected \u003c in Context Map"
+  },
+  {
+    "File": "conformance/UpstreamDownstreamRelationshipDSLParsingTest-22.cml",
+    "PrintedSHA256": "8273e3201173c0c01f13cf041c9a84d0ebe2c261d2525890d14fa6e7c0def5b8"
+  },
+  {
+    "File": "conformance/UpstreamDownstreamRelationshipDSLParsingTest-3.cml",
+    "Error": "../testdata/conformance/UpstreamDownstreamRelationshipDSLParsingTest-3.cml:6:5: unexpected \u003c in Context Map"
+  },
+  {
+    "File": "conformance/UpstreamDownstreamRelationshipDSLParsingTest-4.cml",
+    "Error": "../testdata/conformance/UpstreamDownstreamRelationshipDSLParsingTest-4.cml:6:5: unexpected \u003c in Context Map"
+  },
+  {
+    "File": "conformance/UpstreamDownstreamRelationshipDSLParsingTest-5.cml",
+    "Error": "../testdata/conformance/UpstreamDownstreamRelationshipDSLParsingTest-5.cml:6:5: unexpected \u003c in Context Map"
+  },
+  {
+    "File": "conformance/UpstreamDownstreamRelationshipDSLParsingTest-6.cml",
+    "PrintedSHA256": "ee7271047a4566a953d4447234e1b6c506ff49ce83996b7d64c01236c19f29a7"
+  },
+  {
+    "File": "conformance/UpstreamDownstreamRelationshipDSLParsingTest-7.cml",
+    "PrintedSHA256": "ee7271047a4566a953d4447234e1b6c506ff49ce83996b7d64c01236c19f29a7"
+  },
+  {
+    "File": "conformance/UpstreamDownstreamRelationshipDSLParsingTest-8.cml",
+    "PrintedSHA256": "bd05c74c1df37e99b9ac8bc05e7cd225ee274162f95029ee20811a19c73a8741",
+    "Diagnostics": [
+      {
+        "Severity": 1,
+        "Pos": {
+          "File": "testdata/conformance/UpstreamDownstreamRelationshipDSLParsingTest-8.cml",
+          "Line": 6,
+          "Col": 6
+        },
+        "Message": "Are you sure you need an ANTICORRUPTION LAYER here? This pattern should not be necessarily needed in a Customer-Supplier relationship."
+      }
+    ]
+  },
+  {
+    "File": "conformance/UpstreamDownstreamRelationshipDSLParsingTest-9.cml",
+    "Error": "../testdata/conformance/UpstreamDownstreamRelationshipDSLParsingTest-9.cml:6:6: unexpected \u003c in Context Map"
+  },
+  {
+    "File": "conformance/UseCaseDSLParsingTest-0.cml",
+    "PrintedSHA256": "41d8a385e16b63079469e10de9ba55ac2370c187025b07ebbf0df7d115b5dac2"
+  },
+  {
+    "File": "conformance/UseCaseDSLParsingTest-1.cml",
+    "PrintedSHA256": "f34e2c94c58d4644b595fc6e9f2e4bdd8df5527684ffdf200a4009c98e2d6ed2"
+  },
+  {
+    "File": "conformance/UseCaseDSLParsingTest-10.cml",
+    "PrintedSHA256": "b61f6f67df69ba8078eb47af1cb3b6518fbec17d600659c9ebe15905889b8ec3"
+  },
+  {
+    "File": "conformance/UseCaseDSLParsingTest-11.cml",
+    "PrintedSHA256": "08da5f88a256f34cb36abf340782179522912ec54901f8a82dd5d69da45b274c"
+  },
+  {
+    "File": "conformance/UseCaseDSLParsingTest-12.cml",
+    "PrintedSHA256": "b33fa7e97239831b45a704e5d43d5daf7c14e959f5fc717ee091f88e7c78a5d0"
+  },
+  {
+    "File": "conformance/UseCaseDSLParsingTest-13.cml",
+    "PrintedSHA256": "ed88fce932d5d0800e29890e5bf7178c9c59ec936020a10a41730f8244351704"
+  },
+  {
+    "File": "conformance/UseCaseDSLParsingTest-14.cml",
+    "PrintedSHA256": "18f13c8892c6d86e6cc145059b84eb4e3b736d9a47a2c2fe9d153f34678e97af"
+  },
+  {
+    "File": "conformance/UseCaseDSLParsingTest-15.cml",
+    "PrintedSHA256": "3263d2839ebb6dbf16420f4dd24f8ef52a96204d676e6d7cbe520070772ba2d3"
+  },
+  {
+    "File": "conformance/UseCaseDSLParsingTest-16.cml",
+    "PrintedSHA256": "40822b9569d8bf0537d528e2e51cf2c26b579854940316672b84c21005409225"
+  },
+  {
+    "File": "conformance/UseCaseDSLParsingTest-17.cml",
+    "PrintedSHA256": "548292ce478b0a204713794e124fe8f580aa532edfb4ddfa1724134ffefabef9"
+  },
+  {
+    "File": "conformance/UseCaseDSLParsingTest-18.cml",
+    "PrintedSHA256": "cdf4f473e2fb2f8101bcf168ddaf72db61bce322e3bd8be2124fe8ed583241d4"
+  },
+  {
+    "File": "conformance/UseCaseDSLParsingTest-19.cml",
+    "PrintedSHA256": "eeca746114f5ee3e0993740cb2d16684ab3219b321c04d1b114b94dbaf18be91"
+  },
+  {
+    "File": "conformance/UseCaseDSLParsingTest-2.cml",
+    "PrintedSHA256": "8838766f3c41a314550b9ded1801b9d0d0c7ea83168e62c255811b70b6004fc2"
+  },
+  {
+    "File": "conformance/UseCaseDSLParsingTest-20.cml",
+    "PrintedSHA256": "2c93a8ff33a689d8fb3177d660b901b3c1c809ce4d48507971c9c55811cdef9d"
+  },
+  {
+    "File": "conformance/UseCaseDSLParsingTest-21.cml",
+    "PrintedSHA256": "daed70ddf4ce1f8ee89de2fbcc9aacb38b74a15d60dd0dd2c3d6117adb4d2328"
+  },
+  {
+    "File": "conformance/UseCaseDSLParsingTest-3.cml",
+    "PrintedSHA256": "52cd5c63fbabc0031cdaa4551e1df3ef10b69cfa82229727ef950d70733d0e99"
+  },
+  {
+    "File": "conformance/UseCaseDSLParsingTest-4.cml",
+    "PrintedSHA256": "4122365206ff7c3726a02389916b7d00c83b9481e205d3810e8974e5519958db"
+  },
+  {
+    "File": "conformance/UseCaseDSLParsingTest-5.cml",
+    "PrintedSHA256": "bf4c94a38b693671a790dce102766da0c6940cf3d75191431bba7b1f2e437d08"
+  },
+  {
+    "File": "conformance/UseCaseDSLParsingTest-6.cml",
+    "PrintedSHA256": "e261b890436ade74c23a86e4cbb1b70b0a8ce72a831f9e00f2aa5997f755674b"
+  },
+  {
+    "File": "conformance/UseCaseDSLParsingTest-7.cml",
+    "PrintedSHA256": "d6894570a09c125cf886347ed755d0cbe47b849d2207d387f73561c4863f34dd"
+  },
+  {
+    "File": "conformance/UseCaseDSLParsingTest-8.cml",
+    "PrintedSHA256": "2ada25f7b1e52d157a44ebfb107025878cec80f8eb3252ef98b6115174a520b2"
+  },
+  {
+    "File": "conformance/UseCaseDSLParsingTest-9.cml",
+    "PrintedSHA256": "e82d5de57699a574a9fe9de46369cd4497e763dea90d31ffaf174be46b84d9da"
+  },
+  {
+    "File": "conformance/UserStoryDSLParsingTest-0.cml",
+    "PrintedSHA256": "f34e2c94c58d4644b595fc6e9f2e4bdd8df5527684ffdf200a4009c98e2d6ed2"
+  },
+  {
+    "File": "conformance/UserStoryDSLParsingTest-1.cml",
+    "PrintedSHA256": "35fe7e5f48cd37d6489a45e0cfab0da373c994e6b5f56f54f81857ac118ff3f5",
+    "Diagnostics": [
+      {
+        "Severity": 2,
+        "Pos": {
+          "File": "testdata/conformance/UserStoryDSLParsingTest-1.cml",
+          "Line": 3,
+          "Col": 32
+        },
+        "Message": "You could split your story by its operation/verb."
+      }
+    ]
+  },
+  {
+    "File": "conformance/UserStoryDSLParsingTest-2.cml",
+    "PrintedSHA256": "78c98aee54a258e2644d545add871b808f06d70060c48415173e4a3a8f30f7e7",
+    "Diagnostics": [
+      {
+        "Severity": 2,
+        "Pos": {
+          "File": "testdata/conformance/UserStoryDSLParsingTest-2.cml",
+          "Line": 3,
+          "Col": 32
+        },
+        "Message": "You could split your story by its operation/verb."
+      }
+    ]
+  },
+  {
+    "File": "conformance/UserStoryDSLParsingTest-3.cml",
+    "PrintedSHA256": "395ff0eb3542a972788bed48986bd893b79338d96688ee8459ad24e911cca38a",
+    "Diagnostics": [
+      {
+        "Severity": 1,
+        "Pos": {
+          "File": "testdata/conformance/UserStoryDSLParsingTest-3.cml",
+          "Line": 3,
+          "Col": 32
+        },
+        "Message": "The verb should consist of the following characters: a-z, A-Z, 0-9, _. Please rename it accordingly before applying transformations."
+      },
+      {
+        "Severity": 2,
+        "Pos": {
+          "File": "testdata/conformance/UserStoryDSLParsingTest-3.cml",
+          "Line": 3,
+          "Col": 32
+        },
+        "Message": "You could split your story by its operation/verb."
+      }
+    ]
+  },
+  {
+    "File": "conformance/UserStoryDSLParsingTest-4.cml",
+    "PrintedSHA256": "f62885d86c68d8d2eb333887811b2ba78135fa6109c152a702f56604275f31ef",
+    "Diagnostics": [
+      {
+        "Severity": 1,
+        "Pos": {
+          "File": "testdata/conformance/UserStoryDSLParsingTest-4.cml",
+          "Line": 3,
+          "Col": 32
+        },
+        "Message": "The entity name should consist of the following characters: a-z, A-Z, 0-9, _. Please rename the entity accordingly before applying transformations."
+      },
+      {
+        "Severity": 2,
+        "Pos": {
+          "File": "testdata/conformance/UserStoryDSLParsingTest-4.cml",
+          "Line": 3,
+          "Col": 32
+        },
+        "Message": "You could split your story by its operation/verb."
+      }
+    ]
+  },
+  {
+    "File": "conformance/UserStoryDSLParsingTest-5.cml",
+    "PrintedSHA256": "5dfbaaeb2954126e22af13e029aba20e54466c71f194c849dbf914c3689587da"
+  },
+  {
+    "File": "conformance/UserStoryDSLParsingTest-6.cml",
+    "PrintedSHA256": "f6d6a6bd037e71345abebdfa3877e98638df248313d0a49fa321a61322634c39",
+    "Diagnostics": [
+      {
+        "Severity": 2,
+        "Pos": {
+          "File": "testdata/conformance/UserStoryDSLParsingTest-6.cml",
+          "Line": 4,
+          "Col": 6
+        },
+        "Message": "You could split your story by its operation/verb."
+      }
+    ]
+  },
+  {
+    "File": "conformance/UserStoryDSLParsingTest-7.cml",
+    "PrintedSHA256": "346d3a46d952ff075396069ad8974f4faf8cfe1b31dcd5d6ac3694c15a689a0c"
+  },
+  {
+    "File": "conformance/ValueRegisterDSLParsingTest-0.cml",
+    "PrintedSHA256": "4f9057850438b5821b7a082faf321c87a5fcea6a5582b9d3935607baa6ce1415"
+  },
+  {
+    "File": "conformance/ValueRegisterDSLParsingTest-1.cml",
+    "PrintedSHA256": "1165aa3479c6c63a63869abad9f168dd7251eb6f5ef21aeef0065041b402dc47"
+  },
+  {
+    "File": "conformance/ValueRegisterDSLParsingTest-10.cml",
+    "PrintedSHA256": "bf10610cb700d4447d03c95ca08e537a87be25f65acda9858ba047b4a539bad3"
+  },
+  {
+    "File": "conformance/ValueRegisterDSLParsingTest-11.cml",
+    "PrintedSHA256": "7da9aa68cd2c31f7bae24ef4d7f908990a2209bf8ebf99b9d1913b62877e9f63"
+  },
+  {
+    "File": "conformance/ValueRegisterDSLParsingTest-12.cml",
+    "PrintedSHA256": "7da9aa68cd2c31f7bae24ef4d7f908990a2209bf8ebf99b9d1913b62877e9f63"
+  },
+  {
+    "File": "conformance/ValueRegisterDSLParsingTest-13.cml",
+    "PrintedSHA256": "9edc5038e5d0c891b7d0742d82b08c4e2d9fd50bfdc5b2d9eb5b4191e6998c8b"
+  },
+  {
+    "File": "conformance/ValueRegisterDSLParsingTest-14.cml",
+    "PrintedSHA256": "9edc5038e5d0c891b7d0742d82b08c4e2d9fd50bfdc5b2d9eb5b4191e6998c8b"
+  },
+  {
+    "File": "conformance/ValueRegisterDSLParsingTest-15.cml",
+    "PrintedSHA256": "1bdf1a06f65909ce948e6470b62c7ff310499fe9a3dba09c9efc9085cce7a1e3"
+  },
+  {
+    "File": "conformance/ValueRegisterDSLParsingTest-16.cml",
+    "PrintedSHA256": "1bdf1a06f65909ce948e6470b62c7ff310499fe9a3dba09c9efc9085cce7a1e3"
+  },
+  {
+    "File": "conformance/ValueRegisterDSLParsingTest-17.cml",
+    "PrintedSHA256": "148128c22473bf7d7f318cdfbd91c7541e576d1458ac83aed6d868c193b0dcf4"
+  },
+  {
+    "File": "conformance/ValueRegisterDSLParsingTest-18.cml",
+    "PrintedSHA256": "850194267b2e6bb90e7061c8b23d9e67cf2ddd6f8fbc30377aa024e2849b208a"
+  },
+  {
+    "File": "conformance/ValueRegisterDSLParsingTest-19.cml",
+    "PrintedSHA256": "e954cae980725a5fb2a412bd5d0d9ffa9f1c8c5e0c1729b2fb9a2c64b137a469"
+  },
+  {
+    "File": "conformance/ValueRegisterDSLParsingTest-2.cml",
+    "PrintedSHA256": "ed06a1a5fe95d067535b8a52921d798ec152180b64bf4c999ce2f8d15475bae0"
+  },
+  {
+    "File": "conformance/ValueRegisterDSLParsingTest-20.cml",
+    "PrintedSHA256": "0aa62921ce21845629ddc2dd0bec5f08220eb034be484a1593466f886d99ce3d"
+  },
+  {
+    "File": "conformance/ValueRegisterDSLParsingTest-21.cml",
+    "PrintedSHA256": "870425a17673d81777f7fbbfe67659208da6df7d1f2569dc8edd536205482eae"
+  },
+  {
+    "File": "conformance/ValueRegisterDSLParsingTest-22.cml",
+    "PrintedSHA256": "870425a17673d81777f7fbbfe67659208da6df7d1f2569dc8edd536205482eae"
+  },
+  {
+    "File": "conformance/ValueRegisterDSLParsingTest-23.cml",
+    "PrintedSHA256": "870425a17673d81777f7fbbfe67659208da6df7d1f2569dc8edd536205482eae"
+  },
+  {
+    "File": "conformance/ValueRegisterDSLParsingTest-3.cml",
+    "PrintedSHA256": "1b0ec4966d9ae2ce7c2f15b8de2301dfc7ad594f73203c2a3874d29784e63a0b"
+  },
+  {
+    "File": "conformance/ValueRegisterDSLParsingTest-4.cml",
+    "PrintedSHA256": "1b0ec4966d9ae2ce7c2f15b8de2301dfc7ad594f73203c2a3874d29784e63a0b"
+  },
+  {
+    "File": "conformance/ValueRegisterDSLParsingTest-5.cml",
+    "PrintedSHA256": "1b0ec4966d9ae2ce7c2f15b8de2301dfc7ad594f73203c2a3874d29784e63a0b"
+  },
+  {
+    "File": "conformance/ValueRegisterDSLParsingTest-6.cml",
+    "PrintedSHA256": "1b0ec4966d9ae2ce7c2f15b8de2301dfc7ad594f73203c2a3874d29784e63a0b"
+  },
+  {
+    "File": "conformance/ValueRegisterDSLParsingTest-7.cml",
+    "PrintedSHA256": "1b0ec4966d9ae2ce7c2f15b8de2301dfc7ad594f73203c2a3874d29784e63a0b"
+  },
+  {
+    "File": "conformance/ValueRegisterDSLParsingTest-8.cml",
+    "PrintedSHA256": "1b0ec4966d9ae2ce7c2f15b8de2301dfc7ad594f73203c2a3874d29784e63a0b"
+  },
+  {
+    "File": "conformance/ValueRegisterDSLParsingTest-9.cml",
+    "PrintedSHA256": "3167dc4b8a72c9e5378e87497a793c7a6024ba2340f0848cec7446b3b3fe5393"
+  },
+  {
+    "File": "corpus/architectural-refactorings/AR-01-Split-Aggregate-by-Entities/example-input.cml",
+    "PrintedSHA256": "b2c04c3167f1aa1926779521318e63229284315b7cb4494ce7f9c20e34ff1160"
+  },
+  {
+    "File": "corpus/architectural-refactorings/AR-01-Split-Aggregate-by-Entities/example-output.cml",
+    "PrintedSHA256": "b5a5cb3b04f0bf8c1b36a8ee9a895e505d976ce360a32569ed95e491a6c22568"
+  },
+  {
+    "File": "corpus/architectural-refactorings/AR-02-Split-Bounded-Context-by-Features/example-input.cml",
+    "PrintedSHA256": "7384c22b223df84bec52bb3636c75a965f3c90106a4b7cc03c8c5d0413ced103",
+    "Diagnostics": [
+      {
+        "Severity": 1,
+        "Pos": {
+          "File": "testdata/corpus/architectural-refactorings/AR-02-Split-Bounded-Context-by-Features/example-input.cml",
+          "Line": 39,
+          "Col": 4
+        },
+        "Message": "This attribute seems to be an identifier. Have you thought about creating a Value Object?"
+      },
+      {
+        "Severity": 1,
+        "Pos": {
+          "File": "testdata/corpus/architectural-refactorings/AR-02-Split-Bounded-Context-by-Features/example-input.cml",
+          "Line": 53,
+          "Col": 4
+        },
+        "Message": "This attribute seems to be an identifier. Have you thought about creating a Value Object?"
+      }
+    ]
+  },
+  {
+    "File": "corpus/architectural-refactorings/AR-02-Split-Bounded-Context-by-Features/example-output.cml",
+    "PrintedSHA256": "e7cad6b5a0a0101650db02b1faaefd6a45c78cb8fc446a422b6c0e2ce7e02d2c",
+    "Diagnostics": [
+      {
+        "Severity": 1,
+        "Pos": {
+          "File": "testdata/corpus/architectural-refactorings/AR-02-Split-Bounded-Context-by-Features/example-output.cml",
+          "Line": 20,
+          "Col": 4
+        },
+        "Message": "The object 'Product' is not part of this Bounded Context and not reachable through Context Map relationships. Maybe you want to create a relationship with the context that contains that object?"
+      },
+      {
+        "Severity": 1,
+        "Pos": {
+          "File": "testdata/corpus/architectural-refactorings/AR-02-Split-Bounded-Context-by-Features/example-output.cml",
+          "Line": 23,
+          "Col": 4
+        },
+        "Message": "This attribute seems to be an identifier. Have you thought about creating a Value Object?"
+      },
+      {
+        "Severity": 1,
+        "Pos": {
+          "File": "testdata/corpus/architectural-refactorings/AR-02-Split-Bounded-Context-by-Features/example-output.cml",
+          "Line": 63,
+          "Col": 4
+        },
+        "Message": "This attribute seems to be an identifier. Have you thought about creating a Value Object?"
+      }
+    ]
+  },
+  {
+    "File": "corpus/architectural-refactorings/AR-03-Split-Bounded-Context-by-Owner/example-input.cml",
+    "PrintedSHA256": "29f1c4dd2916a4a0730574740fd2009683eca7ec23fe7aba5d0762c59048d330"
+  },
+  {
+    "File": "corpus/architectural-refactorings/AR-03-Split-Bounded-Context-by-Owner/example-output.cml",
+    "PrintedSHA256": "7d538c7a54b5ed5ff898d142f83584e473fd7315686480b194b1b0e2f6ccee30",
+    "Diagnostics": [
+      {
+        "Severity": 1,
+        "Pos": {
+          "File": "testdata/corpus/architectural-refactorings/AR-03-Split-Bounded-Context-by-Owner/example-output.cml",
+          "Line": 19,
+          "Col": 4
+        },
+        "Message": "The object 'UserAccount' is not part of this Bounded Context and not reachable through Context Map relationships. Maybe you want to create a relationship with the context that contains that object?"
+      }
+    ]
+  },
+  {
+    "File": "corpus/architectural-refactorings/AR-04-Extract-Aggregates-by-Volatility/example-input.cml",
+    "PrintedSHA256": "6ab2a899d29ac8de679905586d688f2bbcca7c2e2de120fdce2a3a35684b030d"
+  },
+  {
+    "File": "corpus/architectural-refactorings/AR-04-Extract-Aggregates-by-Volatility/example-output.cml",
+    "PrintedSHA256": "7c0e8b2bac8dabb0aea83f5f713cae75b09370f26544ecfbf79d59302bdcd88f",
+    "Diagnostics": [
+      {
+        "Severity": 1,
+        "Pos": {
+          "File": "testdata/corpus/architectural-refactorings/AR-04-Extract-Aggregates-by-Volatility/example-output.cml",
+          "Line": 36,
+          "Col": 4
+        },
+        "Message": "The object 'UserAccount' is not part of this Bounded Context and not reachable through Context Map relationships. Maybe you want to create a relationship with the context that contains that object?"
+      }
+    ]
+  },
+  {
+    "File": "corpus/architectural-refactorings/AR-05-Extract-Aggregates-by-Cohesion/example-input.cml",
+    "PrintedSHA256": "51923680f807c53a8ee2dab162b72b5c96b237534f26e4bb51d25e7109a6726a",
+    "Diagnostics": [
+      {
+        "Severity": 1,
+        "Pos": {
+          "File": "testdata/corpus/architectural-refactorings/AR-05-Extract-Aggregates-by-Cohesion/example-input.cml",
+          "Line": 36,
+          "Col": 4
+        },
+        "Message": "This attribute seems to be an identifier. Have you thought about creating a Value Object?"
+      },
+      {
+        "Severity": 1,
+        "Pos": {
+          "File": "testdata/corpus/architectural-refactorings/AR-05-Extract-Aggregates-by-Cohesion/example-input.cml",
+          "Line": 48,
+          "Col": 4
+        },
+        "Message": "This attribute seems to be an identifier. Have you thought about creating a Value Object?"
+      }
+    ]
+  },
+  {
+    "File": "corpus/architectural-refactorings/AR-05-Extract-Aggregates-by-Cohesion/example-output.cml",
+    "PrintedSHA256": "cef60d661d45f47cae41c9ef7ec62f7099c5c6be2f31d46a0e5b6b3811c4c7b5",
+    "Diagnostics": [
+      {
+        "Severity": 1,
+        "Pos": {
+          "File": "testdata/corpus/architectural-refactorings/AR-05-Extract-Aggregates-by-Cohesion/example-output.cml",
+          "Line": 20,
+          "Col": 4
+        },
+        "Message": "This attribute seems to be an identifier. Have you thought about creating a Value Object?"
+      },
+      {
+        "Severity": 1,
+        "Pos": {
+          "File": "testdata/corpus/architectural-refactorings/AR-05-Extract-Aggregates-by-Cohesion/example-output.cml",
+          "Line": 32,
+          "Col": 4
+        },
+        "Message": "This attribute seems to be an identifier. Have you thought about creating a Value Object?"
+      },
+      {
+        "Severity": 1,
+        "Pos": {
+          "File": "testdata/corpus/architectural-refactorings/AR-05-Extract-Aggregates-by-Cohesion/example-output.cml",
+          "Line": 56,
+          "Col": 4
+        },
+        "Message": "The object 'Product' is not part of this Bounded Context and not reachable through Context Map relationships. Maybe you want to create a relationship with the context that contains that object?"
+      }
+    ]
+  },
+  {
+    "File": "corpus/architectural-refactorings/AR-06-Merge-Aggregates/example-input.cml",
+    "PrintedSHA256": "d0c4adba3a16e8da269d704ca98e932c0a85579306edda6dd1c9b38eed792e14",
+    "Diagnostics": [
+      {
+        "Severity": 1,
+        "Pos": {
+          "File": "testdata/corpus/architectural-refactorings/AR-06-Merge-Aggregates/example-input.cml",
+          "Line": 31,
+          "Col": 4
+        },
+        "Message": "This attribute seems to be an identifier. Have you thought about creating a Value Object?"
+      }
+    ]
+  },
+  {
+    "File": "corpus/architectural-refactorings/AR-06-Merge-Aggregates/example-output.cml",
+    "PrintedSHA256": "06c7170c6b151783474b487d8aef0a42b97a9244d20ed0ccbbe2631c18227c71",
+    "Diagnostics": [
+      {
+        "Severity": 1,
+        "Pos": {
+          "File": "testdata/corpus/architectural-refactorings/AR-06-Merge-Aggregates/example-output.cml",
+          "Line": 29,
+          "Col": 4
+        },
+        "Message": "This attribute seems to be an identifier. Have you thought about creating a Value Object?"
+      }
+    ]
+  },
+  {
+    "File": "corpus/architectural-refactorings/AR-07-Merge-Bounded-Contexts/example-input.cml",
+    "PrintedSHA256": "2eac2ba4bf30471a3cd00dc60021d77d6f09d9af08cb442a80c90a44081c1c99",
+    "Diagnostics": [
+      {
+        "Severity": 1,
+        "Pos": {
+          "File": "testdata/corpus/architectural-refactorings/AR-07-Merge-Bounded-Contexts/example-input.cml",
+          "Line": 44,
+          "Col": 4
+        },
+        "Message": "This attribute seems to be an identifier. Have you thought about creating a Value Object?"
+      }
+    ]
+  },
+  {
+    "File": "corpus/architectural-refactorings/AR-07-Merge-Bounded-Contexts/example-output.cml",
+    "PrintedSHA256": "5045daba2e84fb073f768a7ed34df9b721f46b8886936dbc4f7494c4dedf9829",
+    "Diagnostics": [
+      {
+        "Severity": 1,
+        "Pos": {
+          "File": "testdata/corpus/architectural-refactorings/AR-07-Merge-Bounded-Contexts/example-output.cml",
+          "Line": 36,
+          "Col": 4
+        },
+        "Message": "This attribute seems to be an identifier. Have you thought about creating a Value Object?"
+      }
+    ]
+  },
+  {
+    "File": "corpus/architectural-refactorings/AR-08-Extract-Shared-Kernel/example-input.cml",
+    "PrintedSHA256": "7f27684f08d84e4037537b22922f027d77c57ba559acfd3f1235a4f9608a15b7",
+    "Diagnostics": [
+      {
+        "Severity": 1,
+        "Pos": {
+          "File": "testdata/corpus/architectural-refactorings/AR-08-Extract-Shared-Kernel/example-input.cml",
+          "Line": 43,
+          "Col": 4
+        },
+        "Message": "This attribute seems to be an identifier. Have you thought about creating a Value Object?"
+      },
+      {
+        "Severity": 1,
+        "Pos": {
+          "File": "testdata/corpus/architectural-refactorings/AR-08-Extract-Shared-Kernel/example-input.cml",
+          "Line": 54,
+          "Col": 4
+        },
+        "Message": "This attribute seems to be an identifier. Have you thought about creating a Value Object?"
+      }
+    ]
+  },
+  {
+    "File": "corpus/architectural-refactorings/AR-08-Extract-Shared-Kernel/example-output.cml",
+    "PrintedSHA256": "617d8338b92f9d5d2c221bbc127aed1bc8ff6d5dbfb6addf86bcf06153eacac1",
+    "Diagnostics": [
+      {
+        "Severity": 1,
+        "Pos": {
+          "File": "testdata/corpus/architectural-refactorings/AR-08-Extract-Shared-Kernel/example-output.cml",
+          "Line": 39,
+          "Col": 4
+        },
+        "Message": "This attribute seems to be an identifier. Have you thought about creating a Value Object?"
+      },
+      {
+        "Severity": 1,
+        "Pos": {
+          "File": "testdata/corpus/architectural-refactorings/AR-08-Extract-Shared-Kernel/example-output.cml",
+          "Line": 50,
+          "Col": 4
+        },
+        "Message": "This attribute seems to be an identifier. Have you thought about creating a Value Object?"
+      }
+    ]
+  },
+  {
+    "File": "corpus/architectural-refactorings/AR-09-Suspend-Partnership/example-input.cml",
+    "PrintedSHA256": "2a1ef9c34de9bb6fd642de2aae13b91fa9eff86e30d89c716f5fff391fbf1cf2",
+    "Diagnostics": [
+      {
+        "Severity": 1,
+        "Pos": {
+          "File": "testdata/corpus/architectural-refactorings/AR-09-Suspend-Partnership/example-input.cml",
+          "Line": 45,
+          "Col": 4
+        },
+        "Message": "This attribute seems to be an identifier. Have you thought about creating a Value Object?"
+      },
+      {
+        "Severity": 1,
+        "Pos": {
+          "File": "testdata/corpus/architectural-refactorings/AR-09-Suspend-Partnership/example-input.cml",
+          "Line": 56,
+          "Col": 4
+        },
+        "Message": "This attribute seems to be an identifier. Have you thought about creating a Value Object?"
+      }
+    ]
+  },
+  {
+    "File": "corpus/architectural-refactorings/AR-09-Suspend-Partnership/example-output-a.cml",
+    "PrintedSHA256": "f9d44bbf8541cac420045d878995ddec9510976d7403130af1d0de57c5d1ee8c",
+    "Diagnostics": [
+      {
+        "Severity": 1,
+        "Pos": {
+          "File": "testdata/corpus/architectural-refactorings/AR-09-Suspend-Partnership/example-output-a.cml",
+          "Line": 48,
+          "Col": 4
+        },
+        "Message": "This attribute seems to be an identifier. Have you thought about creating a Value Object?"
+      },
+      {
+        "Severity": 1,
+        "Pos": {
+          "File": "testdata/corpus/architectural-refactorings/AR-09-Suspend-Partnership/example-output-a.cml",
+          "Line": 59,
+          "Col": 4
+        },
+        "Message": "This attribute seems to be an identifier. Have you thought about creating a Value Object?"
+      }
+    ]
+  },
+  {
+    "File": "corpus/architectural-refactorings/AR-09-Suspend-Partnership/example-output-b.cml",
+    "PrintedSHA256": "224c4d984dd96e8d3481960cdf8017960fa36afbcdcf4ec1067f68c05a01d16d",
+    "Diagnostics": [
+      {
+        "Severity": 1,
+        "Pos": {
+          "File": "testdata/corpus/architectural-refactorings/AR-09-Suspend-Partnership/example-output-b.cml",
+          "Line": 42,
+          "Col": 4
+        },
+        "Message": "This attribute seems to be an identifier. Have you thought about creating a Value Object?"
+      },
+      {
+        "Severity": 1,
+        "Pos": {
+          "File": "testdata/corpus/architectural-refactorings/AR-09-Suspend-Partnership/example-output-b.cml",
+          "Line": 53,
+          "Col": 4
+        },
+        "Message": "This attribute seems to be an identifier. Have you thought about creating a Value Object?"
+      }
+    ]
+  },
+  {
+    "File": "corpus/architectural-refactorings/AR-09-Suspend-Partnership/example-output-c.cml",
+    "PrintedSHA256": "55565d0f23f5deb5ba69bc24f9f34194ed6e96c0a25e2a50227c09ddd86e1a98",
+    "Diagnostics": [
+      {
+        "Severity": 1,
+        "Pos": {
+          "File": "testdata/corpus/architectural-refactorings/AR-09-Suspend-Partnership/example-output-c.cml",
+          "Line": 39,
+          "Col": 4
+        },
+        "Message": "This attribute seems to be an identifier. Have you thought about creating a Value Object?"
+      },
+      {
+        "Severity": 1,
+        "Pos": {
+          "File": "testdata/corpus/architectural-refactorings/AR-09-Suspend-Partnership/example-output-c.cml",
+          "Line": 50,
+          "Col": 4
+        },
+        "Message": "This attribute seems to be an identifier. Have you thought about creating a Value Object?"
+      }
+    ]
+  },
+  {
+    "File": "corpus/architectural-refactorings/AR-10-Change-Shared-Kernel-To-Partnership/example-input.cml",
+    "PrintedSHA256": "98f71859d362beaa8a4294daf465b4ee04dd39d3c8a3d2613ba7afe04eb7787c"
+  },
+  {
+    "File": "corpus/architectural-refactorings/AR-10-Change-Shared-Kernel-To-Partnership/example-output.cml",
+    "PrintedSHA256": "85116346a968e356698e3da83ab79f1519345194631c9938f66852f9332125fc"
+  },
+  {
+    "File": "corpus/architectural-refactorings/AR-11-Change-Partnership-To-Shared-Kernel/example-input.cml",
+    "PrintedSHA256": "c72341999cbb85d98910fb5ca0e738dcfb48c80701f9dc2f82197cb7f38231ed"
+  },
+  {
+    "File": "corpus/architectural-refactorings/AR-11-Change-Partnership-To-Shared-Kernel/example-output.cml",
+    "PrintedSHA256": "2ddf169991a873490386eb1e8b9cd8cf927bc80a90c2524de8a46e01c0d3678a"
+  },
+  {
+    "File": "corpus/bounded-context-canvas-example/Bounded-Context-Canvas-Example-Stage-1.cml",
+    "PrintedSHA256": "8fcec8247482a61882f9ab8926e3a6ca7c84a630113fd9058b8c5e5415987ed7"
+  },
+  {
+    "File": "corpus/context-mapper-example/ContextMapper-Example-Stage-1.cml",
+    "PrintedSHA256": "e36628e42b2ac90a6fe340d71d00cc4aec3ecd3894c8474d13e4cf4d45ab1a59"
+  },
+  {
+    "File": "corpus/context-mapper-example/ContextMapper-Example-Stage-2.cml",
+    "PrintedSHA256": "acb597d1a32a74ff2219c513b3354b7607a18594fec790ecab528ac1a861e22e"
+  },
+  {
+    "File": "corpus/context-mapper-example/ContextMapper-Example-Stage-3.cml",
+    "PrintedSHA256": "88050367ee8e763b8c7d04cfa1b4c616eff13063980d1f10ba2ed364105cebc5"
+  },
+  {
+    "File": "corpus/context-mapper-example/ContextMapper-Example-Stage-4.cml",
+    "PrintedSHA256": "7f5c5f6d0ff91ad02462e68b3987ae8b9e47bf4baf1b837ca372ebace33dffda",
+    "Diagnostics": [
+      {
+        "Severity": 1,
+        "Pos": {
+          "File": "testdata/corpus/context-mapper-example/ContextMapper-Example-Stage-4.cml",
+          "Line": 56,
+          "Col": 3
+        },
+        "Message": "The name 'Aggregate' is used for multiple domain objects. We suggest to keep the names of domain objects distinct."
+      },
+      {
+        "Severity": 1,
+        "Pos": {
+          "File": "testdata/corpus/context-mapper-example/ContextMapper-Example-Stage-4.cml",
+          "Line": 142,
+          "Col": 3
+        },
+        "Message": "The name 'Aggregate' is used for multiple domain objects. We suggest to keep the names of domain objects distinct."
+      },
+      {
+        "Severity": 1,
+        "Pos": {
+          "File": "testdata/corpus/context-mapper-example/ContextMapper-Example-Stage-4.cml",
+          "Line": 121,
+          "Col": 4
+        },
+        "Message": "The reference to the type 'Aggregate' is ambiguous, since there exist multiple domain objects with that name in your model. We suggest to keep the names of domain objects distinct."
+      }
+    ]
+  },
+  {
+    "File": "corpus/ddd-sample/DDD-Sample-Stage-1.cml",
+    "PrintedSHA256": "0e068d931310b98f43763d40e761b6abc960fb77c9d6cdaea03ec7443f087761"
+  },
+  {
+    "File": "corpus/ddd-sample/DDD-Sample-Stage-2.cml",
+    "PrintedSHA256": "a3232ef47ab3467bec7d42dcae4c1215e41d37169c774ff732116c849a9d148d"
+  },
+  {
+    "File": "corpus/ddd-sample/DDD-Sample-Stage-3.cml",
+    "PrintedSHA256": "2c93848b3de7c45f73120f84cf7c1b2402d293ff24611902a168553877b8b4f8"
+  },
+  {
+    "File": "corpus/ddd-sample/DDD-Sample-Stage-4.cml",
+    "PrintedSHA256": "9afbf6990e8295d881628d93c4a4f0bc453508b285892e2af2f8c022ee4e6abf"
+  },
+  {
+    "File": "corpus/ddd-sample/DDD-Sample-Stage-5.cml",
+    "PrintedSHA256": "7b37b7deec2688ee808911346f7e0b12b3c8ced898abcfda17a16626d3f49a28"
+  },
+  {
+    "File": "corpus/ddd-sample/DDD-Sample_Alternative-Relationship-Syntax.cml",
+    "PrintedSHA256": "7dd927e6f5245955e5c28af21bfbff8a99db210f2fe8bc849fecb5fe56f45a96"
+  },
+  {
+    "File": "corpus/ddd-service-cutting-sample/DDD-Sample.cml",
+    "PrintedSHA256": "7cf36c4e75d669962119e4a266d0897e3f81b43100c35b1f148631c01b16dfdb"
+  },
+  {
+    "File": "corpus/insurance-example/Insurance-Example-Stage-1.cml",
+    "PrintedSHA256": "bdae44e57c5ab7193cff13ad5eaf0b2fdb4454cac2ad038ed32c3f932d5158a3"
+  },
+  {
+    "File": "corpus/insurance-example/Insurance-Example-Stage-2.cml",
+    "PrintedSHA256": "ecbd4911027733a0fc89f6e39aa2e975ebf9de48230127466e133b5f5bc975d2"
+  },
+  {
+    "File": "corpus/insurance-example/Insurance-Example-Stage-3.cml",
+    "PrintedSHA256": "73690d5b1e5edb2ecf1c4d3516a0c12bc8eeadc34295e4388d02e4d27613b7ab"
+  },
+  {
+    "File": "corpus/insurance-example/Insurance-Example-Stage-4.cml",
+    "PrintedSHA256": "8c5c095c285bf570c9355bcdd1aac16393780303fb8081a5b374ed2f6afe24d5"
+  },
+  {
+    "File": "corpus/insurance-example/Insurance-Example-Stage-5.cml",
+    "PrintedSHA256": "740c8d8c617bc162b74221bb954f8fb661331674ce1032aa268b2a79cf4bcb53",
+    "Diagnostics": [
+      {
+        "Severity": 1,
+        "Pos": {
+          "File": "testdata/corpus/insurance-example/Insurance-Example-Stage-5.cml",
+          "Line": 161,
+          "Col": 4
+        },
+        "Message": "This attribute seems to be an identifier. Have you thought about creating a Value Object?"
+      },
+      {
+        "Severity": 1,
+        "Pos": {
+          "File": "testdata/corpus/insurance-example/Insurance-Example-Stage-5.cml",
+          "Line": 177,
+          "Col": 4
+        },
+        "Message": "This attribute seems to be an identifier. Have you thought about creating a Value Object?"
+      }
+    ]
+  },
+  {
+    "File": "corpus/insurance-example/Insurance-Example_Alternative-Relationship-Syntax.cml",
+    "PrintedSHA256": "36eb06a783595755830b6f7879c2bdb9d0be42f93cdf70f4dd79dc78e6ad9d6c"
+  },
+  {
+    "File": "corpus/insurance-example/Insurance-Example_Team-Map.cml",
+    "PrintedSHA256": "0ea1151db98d8d104893b91dfe48e32f4fb5ff8cbf391976986b8f60cb6d735a",
+    "Diagnostics": [
+      {
+        "Severity": 1,
+        "Pos": {
+          "File": "testdata/corpus/insurance-example/Insurance-Example_Team-Map.cml",
+          "Line": 68,
+          "Col": 4
+        },
+        "Message": "This attribute seems to be an identifier. Have you thought about creating a Value Object?"
+      },
+      {
+        "Severity": 1,
+        "Pos": {
+          "File": "testdata/corpus/insurance-example/Insurance-Example_Team-Map.cml",
+          "Line": 125,
+          "Col": 4
+        },
+        "Message": "This attribute seems to be an identifier. Have you thought about creating a Value Object?"
+      },
+      {
+        "Severity": 1,
+        "Pos": {
+          "File": "testdata/corpus/insurance-example/Insurance-Example_Team-Map.cml",
+          "Line": 139,
+          "Col": 4
+        },
+        "Message": "This attribute seems to be an identifier. Have you thought about creating a Value Object?"
+      }
+    ]
+  },
+  {
+    "File": "corpus/lakeside-mutual/LakesideMutual.cml",
+    "PrintedSHA256": "27f7148d69a41cad306d541ed1dee971aec3813d844980b3f03393032a5cecf1",
+    "Diagnostics": [
+      {
+        "Severity": 1,
+        "Pos": {
+          "File": "testdata/corpus/lakeside-mutual/LakesideMutual.cml",
+          "Line": 489,
+          "Col": 3
+        },
+        "Message": "The name 'CustomerId' is used for multiple domain objects. We suggest to keep the names of domain objects distinct."
+      },
+      {
+        "Severity": 1,
+        "Pos": {
+          "File": "testdata/corpus/lakeside-mutual/LakesideMutual.cml",
+          "Line": 545,
+          "Col": 3
+        },
+        "Message": "The name 'AbstractDomainEvent' is used for multiple domain objects. We suggest to keep the names of domain objects distinct."
+      },
+      {
+        "Severity": 1,
+        "Pos": {
+          "File": "testdata/corpus/lakeside-mutual/LakesideMutual.cml",
+          "Line": 591,
+          "Col": 3
+        },
+        "Message": "The name 'CustomerId' is used for multiple domain objects. We suggest to keep the names of domain objects distinct."
+      },
+      {
+        "Severity": 1,
+        "Pos": {
+          "File": "testdata/corpus/lakeside-mutual/LakesideMutual.cml",
+          "Line": 629,
+          "Col": 3
+        },
+        "Message": "The name 'AbstractDomainEvent' is used for multiple domain objects. We suggest to keep the names of domain objects distinct."
+      },
+      {
+        "Severity": 1,
+        "Pos": {
+          "File": "testdata/corpus/lakeside-mutual/LakesideMutual.cml",
+          "Line": 72,
+          "Col": 4
+        },
+        "Message": "The reference to the type 'CustomerId' is ambiguous, since there exist multiple domain objects with that name in your model. We suggest to keep the names of domain objects distinct."
+      },
+      {
+        "Severity": 1,
+        "Pos": {
+          "File": "testdata/corpus/lakeside-mutual/LakesideMutual.cml",
+          "Line": 495,
+          "Col": 4
+        },
+        "Message": "The reference to the type 'CustomerId' is ambiguous, since there exist multiple domain objects with that name in your model. We suggest to keep the names of domain objects distinct."
+      },
+      {
+        "Severity": 1,
+        "Pos": {
+          "File": "testdata/corpus/lakeside-mutual/LakesideMutual.cml",
+          "Line": 497,
+          "Col": 4
+        },
+        "Message": "The reference to the type 'CustomerId' is ambiguous, since there exist multiple domain objects with that name in your model. We suggest to keep the names of domain objects distinct."
+      },
+      {
+        "Severity": 1,
+        "Pos": {
+          "File": "testdata/corpus/lakeside-mutual/LakesideMutual.cml",
+          "Line": 550,
+          "Col": 4
+        },
+        "Message": "The reference to the type 'CustomerId' is ambiguous, since there exist multiple domain objects with that name in your model. We suggest to keep the names of domain objects distinct."
+      },
+      {
+        "Severity": 1,
+        "Pos": {
+          "File": "testdata/corpus/lakeside-mutual/LakesideMutual.cml",
+          "Line": 554,
+          "Col": 4
+        },
+        "Message": "The reference to the type 'CustomerId' is ambiguous, since there exist multiple domain objects with that name in your model. We suggest to keep the names of domain objects distinct."
+      },
+      {
+        "Severity": 1,
+        "Pos": {
+          "File": "testdata/corpus/lakeside-mutual/LakesideMutual.cml",
+          "Line": 598,
+          "Col": 4
+        },
+        "Message": "The reference to the type 'CustomerId' is ambiguous, since there exist multiple domain objects with that name in your model. We suggest to keep the names of domain objects distinct."
+      },
+      {
+        "Severity": 1,
+        "Pos": {
+          "File": "testdata/corpus/lakeside-mutual/LakesideMutual.cml",
+          "Line": 633,
+          "Col": 4
+        },
+        "Message": "The reference to the type 'AbstractDomainEvent' is ambiguous, since there exist multiple domain objects with that name in your model. We suggest to keep the names of domain objects distinct."
+      },
+      {
+        "Severity": 1,
+        "Pos": {
+          "File": "testdata/corpus/lakeside-mutual/LakesideMutual.cml",
+          "Line": 564,
+          "Col": 6
+        },
+        "Message": "The reference to the type 'CustomerId' is ambiguous, since there exist multiple domain objects with that name in your model. We suggest to keep the names of domain objects distinct."
+      },
+      {
+        "Severity": 1,
+        "Pos": {
+          "File": "testdata/corpus/lakeside-mutual/LakesideMutual.cml",
+          "Line": 566,
+          "Col": 6
+        },
+        "Message": "The reference to the type 'CustomerId' is ambiguous, since there exist multiple domain objects with that name in your model. We suggest to keep the names of domain objects distinct."
+      },
+      {
+        "Severity": 1,
+        "Pos": {
+          "File": "testdata/corpus/lakeside-mutual/LakesideMutual.cml",
+          "Line": 567,
+          "Col": 6
+        },
+        "Message": "The reference to the type 'CustomerId' is ambiguous, since there exist multiple domain objects with that name in your model. We suggest to keep the names of domain objects distinct."
+      },
+      {
+        "Severity": 1,
+        "Pos": {
+          "File": "testdata/corpus/lakeside-mutual/LakesideMutual.cml",
+          "Line": 573,
+          "Col": 6
+        },
+        "Message": "The reference to the type 'CustomerId' is ambiguous, since there exist multiple domain objects with that name in your model. We suggest to keep the names of domain objects distinct."
+      },
+      {
+        "Severity": 1,
+        "Pos": {
+          "File": "testdata/corpus/lakeside-mutual/LakesideMutual.cml",
+          "Line": 575,
+          "Col": 6
+        },
+        "Message": "The reference to the type 'CustomerId' is ambiguous, since there exist multiple domain objects with that name in your model. We suggest to keep the names of domain objects distinct."
+      },
+      {
+        "Severity": 1,
+        "Pos": {
+          "File": "testdata/corpus/lakeside-mutual/LakesideMutual.cml",
+          "Line": 579,
+          "Col": 6
+        },
+        "Message": "The reference to the type 'CustomerId' is ambiguous, since there exist multiple domain objects with that name in your model. We suggest to keep the names of domain objects distinct."
+      },
+      {
+        "Severity": 1,
+        "Pos": {
+          "File": "testdata/corpus/lakeside-mutual/LakesideMutual.cml",
+          "Line": 607,
+          "Col": 4
+        },
+        "Message": "The reference to the type 'CustomerId' is ambiguous, since there exist multiple domain objects with that name in your model. We suggest to keep the names of domain objects distinct."
+      },
+      {
+        "Severity": 1,
+        "Pos": {
+          "File": "testdata/corpus/lakeside-mutual/LakesideMutual.cml",
+          "Line": 609,
+          "Col": 4
+        },
+        "Message": "The reference to the type 'CustomerId' is ambiguous, since there exist multiple domain objects with that name in your model. We suggest to keep the names of domain objects distinct."
+      },
+      {
+        "Severity": 1,
+        "Pos": {
+          "File": "testdata/corpus/lakeside-mutual/LakesideMutual.cml",
+          "Line": 620,
+          "Col": 4
+        },
+        "Message": "The reference to the type 'CustomerId' is ambiguous, since there exist multiple domain objects with that name in your model. We suggest to keep the names of domain objects distinct."
+      }
+    ]
+  },
+  {
+    "File": "corpus/lakeside-mutual/QuoteRequestFlow.cml",
+    "PrintedSHA256": "6b30e2d1212a1d6b035290b726b7f964d71c6119db558fabf810e61631711bd7"
+  },
+  {
+    "File": "corpus/lakeside-mutual/ooad-example.cml",
+    "PrintedSHA256": "b2e701d6befd5c228a3055764354528d1f9ade0e9e1d77df95241d57aba92b82",
+    "Diagnostics": [
+      {
+        "Severity": 1,
+        "Pos": {
+          "File": "testdata/corpus/lakeside-mutual/ooad-example.cml",
+          "Line": 16,
+          "Col": 3
+        },
+        "Message": "The name 'CustomerProfile' is used for multiple domain objects. We suggest to keep the names of domain objects distinct."
+      },
+      {
+        "Severity": 1,
+        "Pos": {
+          "File": "testdata/corpus/lakeside-mutual/ooad-example.cml",
+          "Line": 19,
+          "Col": 3
+        },
+        "Message": "The name 'Address' is used for multiple domain objects. We suggest to keep the names of domain objects distinct."
+      },
+      {
+        "Severity": 1,
+        "Pos": {
+          "File": "testdata/corpus/lakeside-mutual/ooad-example.cml",
+          "Line": 41,
+          "Col": 3
+        },
+        "Message": "The name 'CustomerInteraction' is used for multiple domain objects. We suggest to keep the names of domain objects distinct."
+      },
+      {
+        "Severity": 1,
+        "Pos": {
+          "File": "testdata/corpus/lakeside-mutual/ooad-example.cml",
+          "Line": 44,
+          "Col": 3
+        },
+        "Message": "The name 'CustomerLogin' is used for multiple domain objects. We suggest to keep the names of domain objects distinct."
+      },
+      {
+        "Severity": 1,
+        "Pos": {
+          "File": "testdata/corpus/lakeside-mutual/ooad-example.cml",
+          "Line": 47,
+          "Col": 3
+        },
+        "Message": "The name 'Address' is used for multiple domain objects. We suggest to keep the names of domain objects distinct."
+      },
+      {
+        "Severity": 1,
+        "Pos": {
+          "File": "testdata/corpus/lakeside-mutual/ooad-example.cml",
+          "Line": 50,
+          "Col": 3
+        },
+        "Message": "The name 'InsuranceQuoteRequest' is used for multiple domain objects. We suggest to keep the names of domain objects distinct."
+      },
+      {
+        "Severity": 1,
+        "Pos": {
+          "File": "testdata/corpus/lakeside-mutual/ooad-example.cml",
+          "Line": 74,
+          "Col": 3
+        },
+        "Message": "The name 'InsuranceQuoteRequest' is used for multiple domain objects. We suggest to keep the names of domain objects distinct."
+      },
+      {
+        "Severity": 1,
+        "Pos": {
+          "File": "testdata/corpus/lakeside-mutual/ooad-example.cml",
+          "Line": 77,
+          "Col": 3
+        },
+        "Message": "The name 'InsuranceQuote' is used for multiple domain objects. We suggest to keep the names of domain objects distinct."
+      },
+      {
+        "Severity": 1,
+        "Pos": {
+          "File": "testdata/corpus/lakeside-mutual/ooad-example.cml",
+          "Line": 80,
+          "Col": 3
+        },
+        "Message": "The name 'Policy' is used for multiple domain objects. We suggest to keep the names of domain objects distinct."
+      },
+      {
+        "Severity": 1,
+        "Pos": {
+          "File": "testdata/corpus/lakeside-mutual/ooad-example.cml",
+          "Line": 83,
+          "Col": 3
+        },
+        "Message": "The name 'CustomerDataReport' is used for multiple domain objects. We suggest to keep the names of domain objects distinct."
+      },
+      {
+        "Severity": 1,
+        "Pos": {
+          "File": "testdata/corpus/lakeside-mutual/ooad-example.cml",
+          "Line": 86,
+          "Col": 3
+        },
+        "Message": "The name 'RiskAssessment' is used for multiple domain objects. We suggest to keep the names of domain objects distinct."
+      },
+      {
+        "Severity": 1,
+        "Pos": {
+          "File": "testdata/corpus/lakeside-mutual/ooad-example.cml",
+          "Line": 96,
+          "Col": 3
+        },
+        "Message": "The name 'CustomerProfile' is used for multiple domain objects. We suggest to keep the names of domain objects distinct."
+      },
+      {
+        "Severity": 1,
+        "Pos": {
+          "File": "testdata/corpus/lakeside-mutual/ooad-example.cml",
+          "Line": 97,
+          "Col": 3
+        },
+        "Message": "The name 'Address' is used for multiple domain objects. We suggest to keep the names of domain objects distinct."
+      },
+      {
+        "Severity": 1,
+        "Pos": {
+          "File": "testdata/corpus/lakeside-mutual/ooad-example.cml",
+          "Line": 108,
+          "Col": 3
+        },
+        "Message": "The name 'CustomerInteraction' is used for multiple domain objects. We suggest to keep the names of domain objects distinct."
+      },
+      {
+        "Severity": 1,
+        "Pos": {
+          "File": "testdata/corpus/lakeside-mutual/ooad-example.cml",
+          "Line": 109,
+          "Col": 3
+        },
+        "Message": "The name 'CustomerLogin' is used for multiple domain objects. We suggest to keep the names of domain objects distinct."
+      },
+      {
+        "Severity": 1,
+        "Pos": {
+          "File": "testdata/corpus/lakeside-mutual/ooad-example.cml",
+          "Line": 110,
+          "Col": 3
+        },
+        "Message": "The name 'Address' is used for multiple domain objects. We suggest to keep the names of domain objects distinct."
+      },
+      {
+        "Severity": 1,
+        "Pos": {
+          "File": "testdata/corpus/lakeside-mutual/ooad-example.cml",
+          "Line": 111,
+          "Col": 3
+        },
+        "Message": "The name 'InsuranceQuoteRequest' is used for multiple domain objects. We suggest to keep the names of domain objects distinct."
+      },
+      {
+        "Severity": 1,
+        "Pos": {
+          "File": "testdata/corpus/lakeside-mutual/ooad-example.cml",
+          "Line": 124,
+          "Col": 3
+        },
+        "Message": "The name 'InsuranceQuoteRequest' is used for multiple domain objects. We suggest to keep the names of domain objects distinct."
+      },
+      {
+        "Severity": 1,
+        "Pos": {
+          "File": "testdata/corpus/lakeside-mutual/ooad-example.cml",
+          "Line": 125,
+          "Col": 3
+        },
+        "Message": "The name 'InsuranceQuote' is used for multiple domain objects. We suggest to keep the names of domain objects distinct."
+      },
+      {
+        "Severity": 1,
+        "Pos": {
+          "File": "testdata/corpus/lakeside-mutual/ooad-example.cml",
+          "Line": 126,
+          "Col": 3
+        },
+        "Message": "The name 'Policy' is used for multiple domain objects. We suggest to keep the names of domain objects distinct."
+      },
+      {
+        "Severity": 1,
+        "Pos": {
+          "File": "testdata/corpus/lakeside-mutual/ooad-example.cml",
+          "Line": 127,
+          "Col": 3
+        },
+        "Message": "The name 'CustomerDataReport' is used for multiple domain objects. We suggest to keep the names of domain objects distinct."
+      },
+      {
+        "Severity": 1,
+        "Pos": {
+          "File": "testdata/corpus/lakeside-mutual/ooad-example.cml",
+          "Line": 128,
+          "Col": 3
+        },
+        "Message": "The name 'RiskAssessment' is used for multiple domain objects. We suggest to keep the names of domain objects distinct."
+      },
+      {
+        "Severity": 2,
+        "Pos": {
+          "File": "testdata/corpus/lakeside-mutual/ooad-example.cml",
+          "Line": 155,
+          "Col": 3
+        },
+        "Message": "You could split your story by its operation/verb."
+      }
+    ]
+  },
+  {
+    "File": "corpus/microservice-generation/JDL-example/insurance-example-for-JDL-generation.cml",
+    "PrintedSHA256": "9c2aab182a6e3cf191512502062cf9a048e3ac1fb40631ad901e80d806b88dc5",
+    "Diagnostics": [
+      {
+        "Severity": 1,
+        "Pos": {
+          "File": "testdata/corpus/microservice-generation/JDL-example/insurance-example-for-JDL-generation.cml",
+          "Line": 78,
+          "Col": 4
+        },
+        "Message": "This attribute seems to be an identifier. Have you thought about creating a Value Object?"
+      },
+      {
+        "Severity": 1,
+        "Pos": {
+          "File": "testdata/corpus/microservice-generation/JDL-example/insurance-example-for-JDL-generation.cml",
+          "Line": 167,
+          "Col": 4
+        },
+        "Message": "This attribute seems to be an identifier. Have you thought about creating a Value Object?"
+      },
+      {
+        "Severity": 1,
+        "Pos": {
+          "File": "testdata/corpus/microservice-generation/JDL-example/insurance-example-for-JDL-generation.cml",
+          "Line": 181,
+          "Col": 4
+        },
+        "Message": "This attribute seems to be an identifier. Have you thought about creating a Value Object?"
+      }
+    ]
+  },
+  {
+    "File": "corpus/ooad-sample-claims/claims-use-case.cml",
+    "PrintedSHA256": "67462153942e4da77616e80cad0c5ed61a0c2036c5707e30e34475cf23f879fa",
+    "Diagnostics": [
+      {
+        "Severity": 1,
+        "Pos": {
+          "File": "testdata/corpus/ooad-sample-claims/claims-use-case.cml",
+          "Line": 25,
+          "Col": 3
+        },
+        "Message": "The name 'Claim' is used for multiple domain objects. We suggest to keep the names of domain objects distinct."
+      },
+      {
+        "Severity": 1,
+        "Pos": {
+          "File": "testdata/corpus/ooad-sample-claims/claims-use-case.cml",
+          "Line": 32,
+          "Col": 3
+        },
+        "Message": "The name 'Policy' is used for multiple domain objects. We suggest to keep the names of domain objects distinct."
+      },
+      {
+        "Severity": 1,
+        "Pos": {
+          "File": "testdata/corpus/ooad-sample-claims/claims-use-case.cml",
+          "Line": 38,
+          "Col": 3
+        },
+        "Message": "The name 'Contract' is used for multiple domain objects. We suggest to keep the names of domain objects distinct."
+      },
+      {
+        "Severity": 1,
+        "Pos": {
+          "File": "testdata/corpus/ooad-sample-claims/claims-use-case.cml",
+          "Line": 42,
+          "Col": 3
+        },
+        "Message": "The name 'Agent' is used for multiple domain objects. We suggest to keep the names of domain objects distinct."
+      },
+      {
+        "Severity": 1,
+        "Pos": {
+          "File": "testdata/corpus/ooad-sample-claims/claims-use-case.cml",
+          "Line": 48,
+          "Col": 3
+        },
+        "Message": "The name 'Claimant' is used for multiple domain objects. We suggest to keep the names of domain objects distinct."
+      },
+      {
+        "Severity": 1,
+        "Pos": {
+          "File": "testdata/corpus/ooad-sample-claims/claims-use-case.cml",
+          "Line": 64,
+          "Col": 3
+        },
+        "Message": "The name 'Claim' is used for multiple domain objects. We suggest to keep the names of domain objects distinct."
+      },
+      {
+        "Severity": 1,
+        "Pos": {
+          "File": "testdata/corpus/ooad-sample-claims/claims-use-case.cml",
+          "Line": 70,
+          "Col": 3
+        },
+        "Message": "The name 'Policy' is used for multiple domain objects. We suggest to keep the names of domain objects distinct."
+      },
+      {
+        "Severity": 1,
+        "Pos": {
+          "File": "testdata/corpus/ooad-sample-claims/claims-use-case.cml",
+          "Line": 75,
+          "Col": 3
+        },
+        "Message": "The name 'Contract' is used for multiple domain objects. We suggest to keep the names of domain objects distinct."
+      },
+      {
+        "Severity": 1,
+        "Pos": {
+          "File": "testdata/corpus/ooad-sample-claims/claims-use-case.cml",
+          "Line": 78,
+          "Col": 3
+        },
+        "Message": "The name 'Agent' is used for multiple domain objects. We suggest to keep the names of domain objects distinct."
+      },
+      {
+        "Severity": 1,
+        "Pos": {
+          "File": "testdata/corpus/ooad-sample-claims/claims-use-case.cml",
+          "Line": 83,
+          "Col": 3
+        },
+        "Message": "The name 'Claimant' is used for multiple domain objects. We suggest to keep the names of domain objects distinct."
+      }
+    ]
+  },
+  {
+    "File": "corpus/same-day-delivery-shop/stakeholders-and-values.cml",
+    "PrintedSHA256": "a029c891aa93a04fbe1d1500d98c770e4b8b63fae00a0db62559eec6c8f78085"
+  },
+  {
+    "File": "corpus/service-coordination-example/InsuranceClaimCoordination.cml",
+    "PrintedSHA256": "bf67e122c198ec4a26efe1430d4f8519c25f1c5553d8c16f0f47dbb908b03046"
+  },
+  {
+    "File": "corpus/workflow-samples/ClaimsManagement_with_Commands.cml",
+    "PrintedSHA256": "48c86a57500332c7422f7892c57b9786b489b88977f0a68a67fa11d4334b40c9"
+  },
+  {
+    "File": "corpus/workflow-samples/ClaimsManagement_with_ServiceOperations.cml",
+    "PrintedSHA256": "be2a2e84c32cb12c7768373b791b0c0d30399335c5aca93d4183b9ab884a2f3a"
+  },
+  {
+    "File": "corpus/workflow-samples/InsuranceQuoteRequest.cml",
+    "PrintedSHA256": "a669215d934527a3a570e28504b588f47874527a4c20c58f3a9fd6ea37d7fd9f"
+  },
+  {
+    "File": "corpus/workflow-samples/InsuranceQuoteRequest_StateMachineWithoutEventsAndCommands.cml",
+    "PrintedSHA256": "2907bbc121cd49dae6ddfe0a1aeddfe253ba85726c5913e41777aeae71a41d9d"
+  },
+  {
+    "File": "corpus/workflow-samples/InsuranceQuoteRequest_StateMachineWithoutEventsAndCommands_Entity.cml",
+    "PrintedSHA256": "32373ccc917726b5acddec73713ee6ffd78f32392a6fd91259ece30757f25603"
+  }
+]
