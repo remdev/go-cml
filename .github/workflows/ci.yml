@@ -24,6 +24,10 @@ jobs:
         run: sudo apt-get update && sudo apt-get install -y graphviz
       - name: Test
         run: go test ./... -count=1 -cover
+      - name: Race detector
+        run: go test -race ./...
+      - name: Vet
+        run: go vet ./...
 
   lint:
     name: lint

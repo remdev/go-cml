@@ -187,3 +187,18 @@ func TestWorkspaceFlattenRejectsIncompleteAndCyclicGraphs(t *testing.T) {
 		t.Fatal("nil import accepted")
 	}
 }
+
+// Legacy ParseFile must report an earlier nested composition failure before a
+// later sibling's I/O error. LoadWorkspace intentionally does not compose.
+func TestParseFilePreservesNestedCompositionErrorPrecedence(t *testing.T) {
+	dir := t.TempDir()
+	writeWorkspaceFile(t, dir, "map.cml", "ContextMap Imported {}\n")
+	writeWorkspaceFile(t, dir, "conflict.cml", "import \"map.cml\"\nContextMap Local {}\n")
+	entry := writeWorkspaceFile(t, dir, "entry.cml", "import \"conflict.cml\"\nimport \"missing.cml\"\n")
+	if _, err := ParseFile(entry); err == nil || !strings.Contains(err.Error(), "also defines a Context Map") {
+		t.Fatalf("first legacy error: %v", err)
+	}
+	if _, err := LoadWorkspace(entry); !errors.Is(err, os.ErrNotExist) {
+		t.Fatalf("graph load should reach missing file: %v", err)
+	}
+}

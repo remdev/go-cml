@@ -48,7 +48,8 @@ Symlink aliases, case-folded aliases and hard links are not unified.
 Flatten preserves legacy order: expand imports in declaration order, then local
 declarations. Repeated/diamond imports intentionally repeat declarations and can
 produce duplicate-name diagnostics (or a multiple-map composition error). The
-single ContextMap rule is retained. Changing this is a separate compatibility
+single ContextMap rule is retained, including ParseFile error precedence: a
+nested composition failure is returned before visiting a later sibling import. Changing this is a separate compatibility
 decision, not an implicit deduplication optimization.
 
 Composition does not change document slices. The result shares declaration

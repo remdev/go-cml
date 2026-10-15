@@ -58,11 +58,22 @@ func Parse(filename string, src []byte) (*Model, error) {
 
 // ParseFile parses a CML file and recursively loads its imports.
 func ParseFile(path string) (*Model, error) {
-	workspace, err := LoadWorkspace(path)
+	flattened := map[*Document]*Model{}
+	workspace, err := loadWorkspace(path, func(doc *Document) error {
+		var imported []*Model
+		for _, imp := range doc.Imports {
+			imported = append(imported, flattened[imp.Target])
+		}
+		model, err := composeDocument(doc, imported)
+		if err == nil {
+			flattened[doc] = model
+		}
+		return err
+	})
 	if err != nil {
 		return nil, err
 	}
-	return workspace.Flatten()
+	return flattened[workspace.Entry], nil
 }
 
 func (m *Model) absorb(other *Model) error {

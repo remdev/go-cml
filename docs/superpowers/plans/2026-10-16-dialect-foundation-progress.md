@@ -11,3 +11,6 @@
 - Ruling: preserve diamond/repeated-import composition, despite shared graph identities; deduplication would be a separate behavior change.
 - Ruling: keep current mutable syntax nodes, document shallow sharing; immutable resolved IR and filesystem transactions remain future work.
 - Task 4 in progress: architecture/compatibility docs written; full verification and independent review pending.
+
+- Independent review found one P2 compatibility issue: loading all documents before legacy composition changed first-error precedence for a nested map conflict followed by missing sibling. Regression reproduced RED; legacy per-document composition restored while LoadWorkspace stays graph-only. No other actionable findings; reviewer checked all 61 emissions against prior templates/severities/arguments.
+- CI now runs race detector and vet in addition to existing full tests and lint.

@@ -37,6 +37,12 @@ type DocumentImport struct {
 // files are read once per call; loads do not share caches. Filesystem changes
 // during a load are not an atomic snapshot. On any load error it returns nil.
 func LoadWorkspace(path string) (*Workspace, error) {
+	return loadWorkspace(path, nil)
+}
+
+// finish runs after each document subtree, before loading the next sibling.
+// ParseFile uses this to preserve legacy composition error precedence.
+func loadWorkspace(path string, finish func(*Document) error) (*Workspace, error) {
 	abs, err := filepath.Abs(path)
 	if err != nil {
 		return nil, err
@@ -77,6 +83,11 @@ func LoadWorkspace(path string) (*Workspace, error) {
 			}
 			doc.Imports = append(doc.Imports, DocumentImport{Declaration: imp, Target: child})
 		}
+		if finish != nil {
+			if err := finish(doc); err != nil {
+				return nil, err
+			}
+		}
 		return doc, nil
 	}
 	ws.Entry, err = load(abs)
@@ -107,21 +118,30 @@ func (ws *Workspace) Flatten() (*Model, error) {
 		}
 		active[doc] = true
 		defer delete(active, doc)
-		merged := &Model{File: doc.Model.File, Comment: doc.Model.Comment}
+		var imported []*Model
 		for _, imp := range doc.Imports {
 			child, err := flatten(imp.Target)
 			if err != nil {
 				return nil, err
 			}
-			if err := merged.absorb(child); err != nil {
-				return nil, err
-			}
+			imported = append(imported, child)
 		}
-		if err := merged.absorb(doc.Model); err != nil {
-			return nil, err
-		}
-		merged.Imports = slices.Clone(doc.Model.Imports)
-		return merged, nil
+		return composeDocument(doc, imported)
 	}
 	return flatten(ws.Entry)
+}
+
+// composeDocument preserves the legacy composition order and map restriction.
+func composeDocument(doc *Document, imported []*Model) (*Model, error) {
+	merged := &Model{File: doc.Model.File, Comment: doc.Model.Comment}
+	for _, child := range imported {
+		if err := merged.absorb(child); err != nil {
+			return nil, err
+		}
+	}
+	if err := merged.absorb(doc.Model); err != nil {
+		return nil, err
+	}
+	merged.Imports = slices.Clone(doc.Model.Imports)
+	return merged, nil
 }
