@@ -120,8 +120,8 @@ func TestWorkspaceLoadFailures(t *testing.T) {
 				t.Fatal(err)
 			}
 			if tc.name == "syntax" {
-				var syntax *SyntaxError
-				if !errors.As(err, &syntax) || filepath.Base(syntax.File) != "child.cml" {
+				syntax, ok := errors.AsType[*SyntaxError](err)
+				if !ok || filepath.Base(syntax.File) != "child.cml" {
 					t.Fatalf("syntax origin: %v", err)
 				}
 			}

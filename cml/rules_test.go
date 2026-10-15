@@ -1,7 +1,8 @@
 package cml
 
 import (
-	"encoding/json"
+	jsonv1 "encoding/json"
+	json "encoding/json/v2"
 	"io/fs"
 	"os"
 	"path/filepath"
@@ -124,7 +125,13 @@ func TestCorpusDiagnosticMetadata(t *testing.T) {
 }
 
 func TestDiagnosticStringPreservesLegacyRendering(t *testing.T) {
-	d := RuleDiagnostic{Code: RuleUnknownBoundedContext, Category: CategoryResolution, Diagnostic: Diagnostic{Severity: SevError, Pos: Position{File: "model.cml", Line: 2, Col: 3}, Message: "unknown context"}}
+	d := RuleDiagnostic{
+		Code:     RuleUnknownBoundedContext,
+		Category: CategoryResolution,
+		Severity: SevError,
+		Pos:      Position{File: "model.cml", Line: 2, Col: 3},
+		Message:  "unknown context",
+	}
 	if got := d.String(); got != "model.cml:2:3: error: unknown context" {
 		t.Fatal(got)
 	}
@@ -141,7 +148,7 @@ func TestLegacyDiagnosticShape(t *testing.T) {
 	if d.String() != "warning: legacy" {
 		t.Fatal(d)
 	}
-	data, err := json.Marshal(d)
+	data, err := json.Marshal(d, jsonv1.DefaultOptionsV1())
 	if err != nil {
 		t.Fatal(err)
 	}

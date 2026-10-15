@@ -65,8 +65,10 @@ func makeDiagnostic(code RuleCode, pos Position, args ...any) RuleDiagnostic {
 		panic(fmt.Sprintf("unregistered CML validation rule %q", code))
 	}
 	return RuleDiagnostic{
-		Diagnostic: Diagnostic{Severity: definition.DefaultSeverity, Pos: pos,
-			Message: fmt.Sprintf(definition.format, args...)},
-		Code: code, Category: definition.Category,
+		Severity: definition.DefaultSeverity,
+		Pos:      pos,
+		Message:  fmt.Sprintf(definition.format, args...),
+		Code:     code,
+		Category: definition.Category,
 	}
 }
