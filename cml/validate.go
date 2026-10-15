@@ -1,57 +1,9 @@
 package cml
 
 import (
-	"fmt"
 	"regexp"
 	"slices"
 )
-
-// Severity is the level of a semantic diagnostic.
-type Severity int
-
-const (
-	// SevError rejects the model.
-	SevError Severity = iota
-	// SevWarning is reported without failing validation.
-	SevWarning
-	// SevInfo is a suggestion.
-	SevInfo
-)
-
-func (s Severity) String() string {
-	switch s {
-	case SevWarning:
-		return "warning"
-	case SevInfo:
-		return "info"
-	default:
-		return "error"
-	}
-}
-
-// Diagnostic is one semantic finding.
-type Diagnostic struct {
-	Severity Severity
-	Pos      Position
-	Message  string
-}
-
-func (d Diagnostic) String() string {
-	if d.Pos.File == "" {
-		return d.Severity.String() + ": " + d.Message
-	}
-	return fmt.Sprintf("%s:%d:%d: %s: %s", d.Pos.File, d.Pos.Line, d.Pos.Col, d.Severity, d.Message)
-}
-
-// HasErrors reports whether any diagnostic is an error.
-func HasErrors(ds []Diagnostic) bool {
-	for _, d := range ds {
-		if d.Severity == SevError {
-			return true
-		}
-	}
-	return false
-}
 
 var idPattern = regexp.MustCompile(`^[A-Za-z0-9_]+$`)
 
@@ -68,8 +20,8 @@ func (m *Model) Validate() []Diagnostic {
 		return nil
 	}
 	var ds []Diagnostic
-	add := func(sev Severity, pos Position, format string, args ...any) {
-		ds = append(ds, Diagnostic{Severity: sev, Pos: pos, Message: fmt.Sprintf(format, args...)})
+	add := func(code RuleCode, pos Position, args ...any) {
+		ds = append(ds, makeDiagnostic(code, pos, args...))
 	}
 	m.checkUnique(add)
 	m.checkMap(add)
@@ -83,7 +35,7 @@ func (m *Model) Validate() []Diagnostic {
 	return ds
 }
 
-type adder func(Severity, Position, string, ...any)
+type adder func(RuleCode, Position, ...any)
 
 func (m *Model) checkUnique(add adder) {
 	countBC := map[string]int{}
@@ -92,12 +44,12 @@ func (m *Model) checkUnique(add adder) {
 	}
 	for _, bc := range m.BoundedContexts {
 		if countBC[bc.Name] > 1 {
-			add(SevError, bc.Pos, "Multiple bounded contexts with the name '%s' have been declared.", bc.Name)
+			add(RuleDuplicateBoundedContext, bc.Pos, bc.Name)
 		}
 		names := map[string]bool{}
 		for _, svc := range bc.allServices() {
 			if names[svc.Name] {
-				add(SevError, svc.Pos, "Multiple services with the name '%s' have been declared in this Bounded Context.", svc.Name)
+				add(RuleDuplicateContextService, svc.Pos, svc.Name)
 			}
 			names[svc.Name] = true
 		}
@@ -112,16 +64,16 @@ func (m *Model) checkUnique(add adder) {
 	}
 	for _, d := range m.Domains {
 		if countDomain[d.Name] > 1 {
-			add(SevError, d.Pos, "Multiple domains with the name '%s' have been declared.", d.Name)
+			add(RuleDuplicateDomain, d.Pos, d.Name)
 		}
 		for _, sd := range d.Subdomains {
 			if countSub[sd.Name] > 1 {
-				add(SevError, sd.Pos, "Multiple subdomains with the name '%s' have been declared.", sd.Name)
+				add(RuleDuplicateSubdomain, sd.Pos, sd.Name)
 			}
 			svcNames := map[string]bool{}
 			for _, svc := range sd.Services {
 				if svcNames[svc.Name] {
-					add(SevError, svc.Pos, "Multiple services with the name '%s' have been declared in this Subdomain.", svc.Name)
+					add(RuleDuplicateSubdomainService, svc.Pos, svc.Name)
 				}
 				svcNames[svc.Name] = true
 			}
@@ -131,7 +83,7 @@ func (m *Model) checkUnique(add adder) {
 					continue
 				}
 				if seen[obj.Name] {
-					add(SevError, obj.Pos, "Multiple domain objects with the name '%s' have been declared.", obj.Name)
+					add(RuleDuplicateDomainObject, obj.Pos, obj.Name)
 				}
 				seen[obj.Name] = true
 			}
@@ -153,22 +105,22 @@ func (m *Model) checkUnique(add adder) {
 	}
 	for _, mod := range modules {
 		if countMod[mod.Name] > 1 {
-			add(SevError, mod.Pos, "Duplicate name. There is already an existing Module named '%s'.", mod.Name)
+			add(RuleDuplicateModule, mod.Pos, mod.Name)
 		}
 		seen := map[string]bool{}
 		for _, obj := range mod.Objects {
 			if seen[obj.Name] {
-				add(SevError, obj.Pos, "Multiple domain objects with the name '%s' have been declared.", obj.Name)
+				add(RuleDuplicateDomainObject, obj.Pos, obj.Name)
 			}
 			seen[obj.Name] = true
 		}
 		if len(mod.Services) > 0 || hasEntity(mod.Objects) {
-			add(SevWarning, mod.Pos, "The module '%s' contains Services and/or Entities that are not part of an Aggregate. The MDSL and Service Cutter generators ignore them. Please move them into an Aggregate.", mod.Name)
+			add(RuleUngroupedModuleMembers, mod.Pos, mod.Name)
 		}
 	}
 	for _, agg := range aggs {
 		if countAgg[agg.Name] > 1 {
-			add(SevError, agg.Pos, "Multiple aggregates with the name '%s' have been declared.", agg.Name)
+			add(RuleDuplicateAggregate, agg.Pos, agg.Name)
 		}
 		seen := map[string]bool{}
 		for _, obj := range agg.Objects {
@@ -176,7 +128,7 @@ func (m *Model) checkUnique(add adder) {
 				continue
 			}
 			if seen[obj.Name] {
-				add(SevError, obj.Pos, "Multiple domain objects with the name '%s' have been declared.", obj.Name)
+				add(RuleDuplicateDomainObject, obj.Pos, obj.Name)
 			}
 			seen[obj.Name] = true
 		}
@@ -187,7 +139,7 @@ func (m *Model) checkUnique(add adder) {
 	}
 	for _, req := range m.Requirements {
 		if countReq[req.ReqName()] > 1 {
-			add(SevError, req.ReqPos(), "Multiple use cases with the name '%s' have been declared.", req.ReqName())
+			add(RuleDuplicateRequirement, req.ReqPos(), req.ReqName())
 		}
 	}
 	countFlow := map[string]int{}
@@ -213,12 +165,12 @@ func (m *Model) checkUnique(add adder) {
 	}
 	for _, f := range flows {
 		if countFlow[f.name] > 1 {
-			add(SevError, f.pos, "Multiple flows with the name '%s' have been declared. Please provide unique names!", f.name)
+			add(RuleDuplicateFlow, f.pos, f.name)
 		}
 	}
 	for _, c := range coords {
 		if countCoord[c.name] > 1 {
-			add(SevError, c.pos, "Multiple coordinations with the name '%s' have been declared. Please provide unique names!", c.name)
+			add(RuleDuplicateCoordination, c.pos, c.name)
 		}
 	}
 	objCount := map[string]int{}
@@ -227,7 +179,7 @@ func (m *Model) checkUnique(add adder) {
 	})
 	m.WalkObjects(func(_ *BoundedContext, _ *Aggregate, obj *DomainObject) {
 		if objCount[obj.Name] > 1 {
-			add(SevWarning, obj.Pos, "The name '%s' is used for multiple domain objects. We suggest to keep the names of domain objects distinct.", obj.Name)
+			add(RuleReusedDomainObjectName, obj.Pos, obj.Name)
 		}
 	})
 }
@@ -248,7 +200,7 @@ func (m *Model) checkMap(add adder) {
 	contains := map[string]bool{}
 	for _, name := range m.Map.Contains {
 		if m.FindBC(name) == nil {
-			add(SevError, m.Map.Pos, "Couldn't resolve reference to BoundedContext '%s'.", name)
+			add(RuleUnknownBoundedContext, m.Map.Pos, name)
 			continue
 		}
 		contains[name] = true
@@ -261,13 +213,13 @@ func (m *Model) checkMap(add adder) {
 		}
 	}
 	if m.Map.Type == "ORGANIZATIONAL" && teamCount == 0 {
-		add(SevWarning, m.Map.Pos, "Your Context Map is of the type ORGANIZATIONAL but does not contain Bounded Contexts of the type TEAM. This type of Context Map is intended to model team relationships.")
+		add(RuleOrganizationalMapWithoutTeams, m.Map.Pos)
 	}
 	if m.Map.Type == "SYSTEM_LANDSCAPE" {
 		for _, name := range m.Map.Contains {
 			bc := m.FindBC(name)
 			if bc != nil && bc.Type == "TEAM" {
-				add(SevError, m.Map.Pos, "A Bounded Context of type 'TEAM' is not allowed on a SYSTEM_LANDSCAPE map.")
+				add(RuleTeamOnSystemLandscape, m.Map.Pos)
 			}
 		}
 	}
@@ -278,25 +230,25 @@ func (m *Model) checkMap(add adder) {
 				continue
 			}
 			if m.FindBC(name) == nil {
-				add(SevError, rel.Pos, "Couldn't resolve reference to BoundedContext '%s'.", name)
+				add(RuleUnknownBoundedContext, rel.Pos, name)
 				continue
 			}
 			if !contains[name] {
-				add(SevError, rel.Pos, "The Bounded Context '%s' is not part of the Context Map.", name)
+				add(RuleContextNotInMap, rel.Pos, name)
 			}
 		}
 		if left != "" && left == right {
-			add(SevError, rel.Pos, "Bounded context relationships must be declared between two different bounded contexts.")
+			add(RuleSelfRelationship, rel.Pos)
 		}
 		if rel.Kind == RelCustomerSupplier {
 			if slices.Contains(rel.UpstreamRoles, "OHS") {
-				add(SevError, rel.Pos, "The OPEN-HOST SERVICE pattern is not applicable for a Customer-Supplier relationship.")
+				add(RuleCustomerSupplierOHS, rel.Pos)
 			}
 			if slices.Contains(rel.DownstreamRoles, "ACL") {
-				add(SevWarning, rel.Pos, "Are you sure you need an ANTICORRUPTION LAYER here? This pattern should not be necessarily needed in a Customer-Supplier relationship.")
+				add(RuleCustomerSupplierACL, rel.Pos)
 			}
 			if slices.Contains(rel.DownstreamRoles, "CF") {
-				add(SevError, rel.Pos, "The CONFORMIST pattern is not applicable for a Customer-Supplier relationship.")
+				add(RuleCustomerSupplierConformist, rel.Pos)
 			}
 		}
 		if rel.Upstream != "" {
@@ -310,7 +262,7 @@ func (m *Model) checkMap(add adder) {
 			}
 			for _, name := range rel.ExposedAggregates {
 				if !known[name] {
-					add(SevError, rel.Pos, "The aggregate '%s' is not part of the upstream context '%s'.", name, rel.Upstream)
+					add(RuleExposedAggregateOwnership, rel.Pos, name, rel.Upstream)
 				}
 			}
 		}
@@ -327,22 +279,22 @@ func (rel *Relationship) ends() (string, string) {
 func (m *Model) checkTeams(add adder) {
 	for _, bc := range m.BoundedContexts {
 		if len(bc.Realizes) > 0 && bc.Type != "TEAM" {
-			add(SevError, bc.Pos, "Only teams can realize bounded contexts. '%s' is not a team!", bc.Name)
+			add(RuleRealizesRequiresTeam, bc.Pos, bc.Name)
 		}
 		for _, name := range bc.Realizes {
 			if m.FindBC(name) == nil {
-				add(SevError, bc.Pos, "Couldn't resolve reference to BoundedContext '%s'.", name)
+				add(RuleUnknownBoundedContext, bc.Pos, name)
 			}
 		}
 		if bc.Refines != "" && m.FindBC(bc.Refines) == nil {
-			add(SevError, bc.Pos, "Couldn't resolve reference to BoundedContext '%s'.", bc.Refines)
+			add(RuleUnknownBoundedContext, bc.Pos, bc.Refines)
 		}
 		domains := 0
 		for _, part := range bc.Implements {
 			domain := m.FindDomain(part)
 			_, sub := m.FindSubdomain(part)
 			if domain == nil && sub == nil {
-				add(SevError, bc.Pos, "Couldn't resolve reference to Domain '%s'.", part)
+				add(RuleUnknownDomain, bc.Pos, part)
 				continue
 			}
 			if domain != nil {
@@ -357,12 +309,12 @@ func (m *Model) checkTeams(add adder) {
 					}
 				}
 				if implemented {
-					add(SevError, bc.Pos, "The subdomain '%s' is already implemented through its domain '%s'.", sub.Name, parent.Name)
+					add(RuleRedundantDomainImplementation, bc.Pos, sub.Name, parent.Name)
 				}
 			}
 		}
 		if domains > 1 {
-			add(SevWarning, bc.Pos, "Are you sure you want to implement multiple Domains within one Bounded Context? A Bounded Context should typically implement only a part of your Domain; one or multiple Subdomains.")
+			add(RuleMultipleImplementedDomains, bc.Pos)
 		}
 	}
 }
@@ -371,11 +323,11 @@ func (m *Model) checkDomains(add adder) {
 	for _, d := range m.Domains {
 		for _, sd := range d.Subdomains {
 			if sd.Name == d.Name {
-				add(SevError, sd.Pos, "The subdomain '%s' has the same name as the domain. Please define a unique subdomain name.", sd.Name)
+				add(RuleSubdomainMatchesDomain, sd.Pos, sd.Name)
 			}
 			for _, name := range sd.Supports {
 				if m.findRequirement(name) == nil {
-					add(SevError, sd.Pos, "Couldn't resolve reference to UserRequirement '%s'.", name)
+					add(RuleUnknownRequirement, sd.Pos, name)
 				}
 			}
 		}
@@ -397,25 +349,25 @@ func (m *Model) checkAggregates(add adder) {
 			}
 			if len(roots) > 1 {
 				for _, obj := range roots {
-					add(SevError, obj.Pos, "Your aggregate '%s' contains multiple aggregate roots. An aggregate must only contain one root.", agg.Name)
+					add(RuleMultipleAggregateRoots, obj.Pos, agg.Name)
 				}
 			}
 			if len(states) > 1 {
 				for _, obj := range states {
-					add(SevError, obj.Pos, "Your aggregate '%s' contains multiple enums that define its states. Ensure that only one enum declares the states of the Aggregate.", agg.Name)
+					add(RuleMultipleLifecycleEnums, obj.Pos, agg.Name)
 				}
 			}
 			if agg.Owner != "" {
 				owner := m.FindBC(agg.Owner)
 				if owner == nil {
-					add(SevError, agg.Pos, "Couldn't resolve reference to BoundedContext '%s'.", agg.Owner)
+					add(RuleUnknownBoundedContext, agg.Pos, agg.Owner)
 				} else if owner.Type != "TEAM" {
-					add(SevError, agg.Pos, "'%s' is not a team. The owner attribute must refer to a Bounded Context representing a team (type = TEAM)!", owner.Name)
+					add(RuleOwnerRequiresTeam, agg.Pos, owner.Name)
 				}
 			}
 			for _, name := range agg.RequirementRefs {
 				if m.findRequirement(name) == nil {
-					add(SevError, agg.Pos, "Couldn't resolve reference to UserRequirement '%s'.", name)
+					add(RuleUnknownRequirement, agg.Pos, name)
 				}
 			}
 		}
@@ -427,17 +379,17 @@ func (m *Model) checkRequirements(add adder) {
 		story, _ := req.(*UserStory)
 		for _, feature := range req.ReqFeatures() {
 			if feature.Entity != "" && !idPattern.MatchString(feature.Entity) {
-				add(SevWarning, feature.Pos, "The entity name should consist of the following characters: a-z, A-Z, 0-9, _. Please rename the entity accordingly before applying transformations.")
+				add(RuleFeatureEntityIdentifier, feature.Pos)
 			}
 			if feature.Verb != "" && !idPattern.MatchString(feature.Verb) {
-				add(SevWarning, feature.Pos, "The verb should consist of the following characters: a-z, A-Z, 0-9, _. Please rename it accordingly before applying transformations.")
+				add(RuleFeatureVerbIdentifier, feature.Pos)
 			}
 			if story != nil && story.SplitBy == "" && len(story.Features) == 1 && feature.Verb != "" {
-				add(SevInfo, feature.Pos, "You could split your story by its operation/verb.")
+				add(RuleStorySplitSuggestion, feature.Pos)
 			}
 		}
 		if story != nil && story.SplitBy != "" && m.findRequirement(story.SplitBy) == nil {
-			add(SevError, story.Pos, "Couldn't resolve reference to UserStory '%s'.", story.SplitBy)
+			add(RuleUnknownUserStory, story.Pos, story.SplitBy)
 		}
 	}
 }
@@ -450,35 +402,35 @@ func (m *Model) checkFlows(add adder) {
 		for _, flow := range bc.Application.Flows {
 			for _, step := range flow.Steps {
 				if step.Command != "" && !bc.hasCommand(step.Command) {
-					add(SevError, step.Pos, "The command or operation '%s' is not part of the '%s' Bounded Context. Please ensure that your workflow only uses commands, operations and events that are part of the same Bounded Context.", step.Command, bc.Name)
+					add(RuleFlowMemberScope, step.Pos, step.Command, bc.Name)
 				}
 				if step.Operation != "" && !bc.hasOperation(step.Operation) {
-					add(SevError, step.Pos, "The command or operation '%s' is not part of the '%s' Bounded Context. Please ensure that your workflow only uses commands, operations and events that are part of the same Bounded Context.", step.Operation, bc.Name)
+					add(RuleFlowMemberScope, step.Pos, step.Operation, bc.Name)
 				}
 				for _, name := range step.Commands {
 					if !bc.hasCommand(name) {
-						add(SevError, step.Pos, "The command or operation '%s' is not part of the '%s' Bounded Context. Please ensure that your workflow only uses commands, operations and events that are part of the same Bounded Context.", name, bc.Name)
+						add(RuleFlowMemberScope, step.Pos, name, bc.Name)
 					}
 				}
 				for _, name := range step.Operations {
 					if !bc.hasOperation(name) {
-						add(SevError, step.Pos, "The command or operation '%s' is not part of the '%s' Bounded Context. Please ensure that your workflow only uses commands, operations and events that are part of the same Bounded Context.", name, bc.Name)
+						add(RuleFlowMemberScope, step.Pos, name, bc.Name)
 					}
 				}
 				for _, name := range step.Events {
 					if !bc.hasEvent(name) {
-						add(SevError, step.Pos, "Couldn't resolve reference to DomainEvent '%s'.", name)
+						add(RuleUnknownDomainEvent, step.Pos, name)
 					}
 				}
 				if step.Aggregate != "" {
 					_, _, agg := m.FindAggregate(step.Aggregate)
 					if agg == nil || !bc.ownsAggregate(agg) {
-						add(SevError, step.Pos, "Couldn't resolve reference to Aggregate '%s'.", step.Aggregate)
+						add(RuleUnknownAggregate, step.Pos, step.Aggregate)
 					} else if step.Transition != nil {
 						enum := lifecycleEnum(agg)
 						for _, value := range transitionValues(step.Transition) {
 							if enum == nil || !enum.hasValue(value) {
-								add(SevError, step.Pos, "'%s' is not a state of the Aggregate '%s'.", value, agg.Name)
+								add(RuleUnknownAggregateState, step.Pos, value, agg.Name)
 							}
 						}
 					}
@@ -489,15 +441,15 @@ func (m *Model) checkFlows(add adder) {
 			for _, step := range coord.Steps {
 				target := m.FindBC(step.BoundedContext)
 				if target == nil {
-					add(SevError, step.Pos, "Couldn't resolve reference to BoundedContext '%s'.", step.BoundedContext)
+					add(RuleUnknownBoundedContext, step.Pos, step.BoundedContext)
 					continue
 				}
 				if target != bc && !m.reachable(bc.Name, target.Name) {
-					add(SevError, step.Pos, "The Bounded Context '%s' is not reachable through Context Map relationships. Maybe you want to create a relationship with this context?", target.Name)
+					add(RuleCoordinationReachability, step.Pos, target.Name)
 				}
 				svc := target.applicationService(step.Service)
 				if svc == nil {
-					add(SevError, step.Pos, "The Service '%s' is not part of the Bounded Context '%s' Application.", step.Service, target.Name)
+					add(RuleUnknownApplicationService, step.Pos, step.Service, target.Name)
 					continue
 				}
 				count := 0
@@ -507,9 +459,9 @@ func (m *Model) checkFlows(add adder) {
 					}
 				}
 				if count == 0 {
-					add(SevError, step.Pos, "The operation '%s' is not part of the Service '%s' of the Bounded Context '%s' Application.", step.Operation, step.Service, target.Name)
+					add(RuleUnknownApplicationOperation, step.Pos, step.Operation, step.Service, target.Name)
 				} else if count > 1 {
-					add(SevWarning, step.Pos, "The reference to operation '%s' is ambiguous, since there exist multiple operations with that name in Service '%s'. We suggest keeping the operation names distinct when referencing them through Coordinations.", step.Operation, step.Service)
+					add(RuleAmbiguousApplicationOperation, step.Pos, step.Operation, step.Service)
 				}
 			}
 		}
@@ -527,7 +479,7 @@ func (m *Model) checkOperationStates(add adder) {
 					}
 					for _, value := range transitionValues(op.Transition) {
 						if enum == nil || !enum.hasValue(value) {
-							add(SevError, op.Pos, "'%s' is not a state of the Aggregate '%s'.", value, agg.Name)
+							add(RuleUnknownAggregateState, op.Pos, value, agg.Name)
 						}
 					}
 				}
@@ -562,19 +514,19 @@ func (m *Model) checkReferences(add adder) {
 		}
 		if len(matches) == 0 {
 			if ref {
-				add(SevError, pos, "Couldn't resolve reference to '%s'.", name)
+				add(RuleUnknownDomainObject, pos, name)
 			}
 			return
 		}
 		if len(matches) > 1 {
-			add(SevWarning, pos, "The reference to the type '%s' is ambiguous, since there exist multiple domain objects with that name in your model. We suggest to keep the names of domain objects distinct.", name)
+			add(RuleAmbiguousDomainObject, pos, name)
 		}
 		targetBC := owners[matches[0]]
 		if from == nil || targetBC == nil || targetBC == from {
 			return
 		}
 		if !m.reachable(from.Name, targetBC.Name) {
-			add(SevWarning, pos, "The object '%s' is not part of this Bounded Context and not reachable through Context Map relationships. Maybe you want to create a relationship with the context that contains that object?", name)
+			add(RuleObjectReachability, pos, name)
 		}
 	}
 	m.WalkObjects(func(bc *BoundedContext, _ *Aggregate, obj *DomainObject) {
@@ -589,15 +541,15 @@ func (m *Model) checkReferences(add adder) {
 				checkName(attr.Pos, name, bc, true)
 			}
 			if hasMod(attr.Mods, "key") && attr.Type != nil && primitiveTypes[attr.Type.TypeName] {
-				add(SevWarning, attr.Pos, "This attribute seems to be an identifier. Have you thought about creating a Value Object?")
+				add(RulePrimitiveIdentifier, attr.Pos)
 			}
 			if hasMod(attr.Mods, "nullable") && attr.Type != nil && primitiveTypes[attr.Type.TypeName] && !hasNot(attr.Mods, "nullable") {
-				add(SevError, attr.Pos, "nullable is not relevant for primitive types")
+				add(RuleNullablePrimitive, attr.Pos)
 			}
 		}
 		for _, tr := range obj.Traits {
 			if len(index[tr.Name]) == 0 {
-				add(SevError, obj.Pos, "Couldn't resolve reference to Trait '%s'.", tr.Name)
+				add(RuleUnknownTrait, obj.Pos, tr.Name)
 			}
 		}
 		if obj.ExtendsAt {
