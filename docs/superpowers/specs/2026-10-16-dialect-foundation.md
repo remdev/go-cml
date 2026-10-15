@@ -1,5 +1,7 @@
 # Dialect foundation
 
+[English](2026-10-16-dialect-foundation.md) · [Русский](2026-10-16-dialect-foundation.ru.md)
+
 ## Intent
 
 Prepare go-cml for additive language evolution and, eventually, an explicitly

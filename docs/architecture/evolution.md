@@ -1,5 +1,7 @@
 # Evolving CML deliberately
 
+[English](evolution.md) · [Русский](evolution.ru.md)
+
 This is the boundary for the next stages, not new language syntax. The current
 release remains a CML 6.12 implementation. Preparatory APIs preserve documents
 and identify diagnostics; they do not add a permissive dialect.

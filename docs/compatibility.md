@@ -1,5 +1,7 @@
 # Compatibility contract
 
+[English](compatibility.md) · [Русский](compatibility.ru.md)
+
 ## Reference and scope
 
 The reference is Context Mapper DSL 6.12. The preparatory baseline is this

@@ -1,5 +1,7 @@
 # Execution ledger — 2026-10-16-dialect-foundation.md
 
+[English](2026-10-16-dialect-foundation-progress.md) · [Русский](2026-10-16-dialect-foundation-progress.ru.md)
+
 - Baseline: 351c92b; clean original checkout; isolated clone at /private/tmp/go-cml-foundation on codex/dialect-foundation.
 - Baseline suite: go test ./... -count=1 PASS (all six packages).
 - Ruling: user explicitly requested planning and implementation; proceed inline without another approval handoff. No new syntax.

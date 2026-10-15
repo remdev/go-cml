@@ -1,5 +1,7 @@
 # Dialect Foundation Implementation Plan
 
+[English](2026-10-16-dialect-foundation.md) · [Русский](2026-10-16-dialect-foundation.ru.md)
+
 > **For agentic workers:** Use superpowers:executing-plans to implement task-by-task in this session. User authorized execution and a separate branch.
 
 **Goal:** Prepare compatible CML APIs and repository boundaries for future DSL evolution without adding syntax.

@@ -64,7 +64,7 @@ fmt.Print(model.String())
 CML 6.12 остаётся базой совместимости. Подготовительные API сохраняют исходные
 документы (`cml.LoadWorkspace`) и идентифицируют правила проверок (`cml.Rules`);
 нового синтаксиса или диалекта пока нет. Перед расширениями см. [контракт
-совместимости](docs/compatibility.md) и [архитектурные границы](docs/architecture/evolution.md).
+совместимости](docs/compatibility.ru.md) и [архитектурные границы](docs/architecture/evolution.ru.md).
 
 ## Разработка
 
