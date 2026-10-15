@@ -78,6 +78,13 @@ func main() {
 | `refactor` | Architectural refactorings |
 | `cli` | The `cm` commands |
 
+## Language evolution
+
+CML 6.12 remains the compatibility baseline. Preparatory APIs preserve source
+documents (`cml.LoadWorkspace`) and identify validation rules (`cml.Rules`);
+they add no syntax or dialect. See the [compatibility contract](docs/compatibility.md)
+and [architecture boundaries](docs/architecture/evolution.md) before extending the language.
+
 ## Development
 
 ```bash
